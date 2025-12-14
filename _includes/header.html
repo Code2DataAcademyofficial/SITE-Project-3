@@ -5,18 +5,28 @@
       Zarifa Ilyasova
     </div>
 
-<ul class="nav-links">
-    <a href="{{ site.baseurl }}/" class="nav-item {% if page.url == '/' %}active{% endif %}">Home</a>
-    <a href="{{ site.baseurl }}/about" class="nav-item {% if page.url contains 'about' %}active{% endif %}">About</a>
-    <a href="{{ site.baseurl }}/projects" class="nav-item {% if page.url contains 'projects' %}active{% endif %}">Projects</a>
-    <a href="{{ site.baseurl }}/contact" class="nav-item {% if page.url contains 'contact' %}active{% endif %}">Contact</a>
-</ul>
-<!-- Theme Toggle -->
-<button id="theme-toggle" class="nav-theme-btn" aria-label="Toggle theme">
-  🌙
-</button>
+    <ul class="nav-links">
+      <a href="{{ site.baseurl }}/" class="nav-item {% if page.url == '/' or page.url == '/index.html' %}active{% endif %}">
+        Home
+      </a>
 
+      <a href="{{ site.baseurl }}/about.html" class="nav-item {% if page.url contains 'about' %}active{% endif %}">
+        About
+      </a>
 
+      <a href="{{ site.baseurl }}/projects.html" class="nav-item {% if page.url contains 'projects' %}active{% endif %}">
+        Projects
+      </a>
+
+      <a href="{{ site.baseurl }}/contact.html" class="nav-item {% if page.url contains 'contact' %}active{% endif %}">
+        Contact
+      </a>
+    </ul>
+
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="nav-theme-btn" aria-label="Toggle theme">
+      🌙
+    </button>
 
   </div>
 </nav>
