@@ -1170,3 +1170,57 @@ body:not(.theme-dark) .about-card {
     0 0 50px rgba(236, 72, 153, 0.55);
 }
 
+/* =========================
+   FLOWER CLUSTERS (REPLACES RIBBON)
+========================= */
+
+.flower-cluster {
+  position: absolute;
+  display: flex;
+  gap: 6px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* SOL ÜST */
+.flower-cluster.top-left {
+  top: -22px;
+  left: -22px;
+}
+
+/* SOL ALT (SIMMETRIK) */
+.flower-cluster.bottom-left {
+  bottom: -22px;
+  left: -22px;
+}
+
+/* ÜMUMİ ÇİÇƏK */
+.flower-cluster .flower {
+  display: inline-block;
+  filter: drop-shadow(0 6px 16px rgba(236, 72, 153, 0.6));
+}
+
+/* FƏRQLİ ÖLÇÜLƏR – TƏBİİ GÖRÜNÜŞ */
+.flower-cluster .f1 { font-size: 42px; }
+.flower-cluster .f2 { font-size: 32px; transform: translateY(10px); }
+.flower-cluster .f3 { font-size: 26px; transform: translateY(20px); }
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+
+  .flower-cluster.top-left {
+    top: -14px;
+    left: -14px;
+  }
+
+  .flower-cluster.bottom-left {
+    bottom: -14px;
+    left: -14px;
+  }
+
+  .flower-cluster .f1 { font-size: 30px; }
+  .flower-cluster .f2 { font-size: 22px; transform: translateY(6px); }
+  .flower-cluster .f3 { font-size: 18px; transform: translateY(12px); }
+}
