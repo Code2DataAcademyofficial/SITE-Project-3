@@ -1161,3 +1161,16 @@ body:not(.theme-dark) .about-card {
       0 0 45px rgba(236, 72, 153, 0.5);
   }
 }
+@media (max-width: 768px) {
+  .nav-logo {
+    font-size: 17px;   /* 🔥 ikisi birlikdə kiçilir */
+  }
+}
+@media (max-width: 768px) {
+  .nav-theme-btn {
+    margin-left: 6px;
+  }
+}
+.nav-logo:active {
+  transform: scale(0.95);
+}
