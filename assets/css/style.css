@@ -1068,7 +1068,7 @@ body:not(.theme-dark) .about-card {
   .decorative-ribbon {
     transform: scale(0.5);
     transform-origin: top left;
-    max-width: 100%;
+    max-width: 50%;
   }
   .nav-links {
     flex-direction: row;          /* ← horizontal */
