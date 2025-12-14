@@ -992,3 +992,37 @@ body:not(.theme-dark) .about-card {
     0 0 70px rgba(236, 72, 153, 0.35),
     0 25px 60px rgba(0, 0, 0, 0.45);
 }
+/* =========================
+   MOBILE NAVBAR FIX
+========================= */
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 14px 16px;
+  }
+
+  .nav-logo {
+    font-size: 20px;
+    white-space: nowrap;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-item {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
+@media (max-width: 480px) {
+
+  .nav-logo {
+    font-size: 18px;
+  }
+
+  .nav-item {
+    font-size: 13px;
+    padding: 7px 10px;
+  }
+}
