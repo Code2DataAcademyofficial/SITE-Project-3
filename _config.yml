@@ -19,8 +19,12 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Zarifa Ilyasova
+
 url: "https://code2dataacademyofficial.github.io"
 baseurl: "/SITE-Project-3"
+
+markdown: kramdown
+
 
 
 
