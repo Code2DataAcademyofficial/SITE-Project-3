@@ -1063,7 +1063,7 @@ body:not(.theme-dark) .about-card {
     width: 100%;
     align-items: center;
   }
-    .ribbon,
+    .ribbon-emoji,
   .hero-ribbon,
   .decorative-ribbon {
     transform: scale(0.5);
@@ -1123,6 +1123,67 @@ img {
   /* DARK / LIGHT TO END */
   .theme-toggle {
     margin-left: auto;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .nav-logo {
+    font-size: 0.9rem;          /* xırdalaşdır */
+    line-height: 1.1;
+    margin-right: 0.5rem;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-logo span,
+  .nav-logo .flower {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .theme-toggle {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.5rem;
+    margin-left: 0.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-left {
+    display: flex;
+    align-items: center;
+  }
+}
+@media (max-width: 768px) {
+
+  .nav-links {
+    margin-top: 0.6rem;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+
+  .nav-item {
+    font-size: 0.85rem;
+    padding: 0.45rem 0.9rem;
+  }
+}
+@media (max-width: 768px) {
+
+  .ribbon-emoji {
+    transform: scale(0.6);
+    top: -10px;
+    left: -10px;
   }
 }
 
