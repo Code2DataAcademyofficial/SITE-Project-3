@@ -1223,18 +1223,18 @@ body:not(.theme-dark) .about-card {
 }
 
 .corner-flowers.bottom-right .flower.s1 {
-  font-size: 26px;
+  font-size: 30px;
   position: absolute;
-  bottom: 8px;
-  right: 48px;
+  bottom: 9px;
+  right: 52px;
   opacity: 0.9;
 }
 
 .corner-flowers.bottom-right .flower.s2 {
-  font-size: 26px;
+  font-size: 30px;
   position: absolute;
-  bottom: 48px;
-  right: 6px;
+  bottom: 52px;
+  right: 9px;
   opacity: 0.9;
 }
 @media (max-width: 768px) {
