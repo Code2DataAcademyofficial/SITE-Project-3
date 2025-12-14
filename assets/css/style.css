@@ -1021,3 +1021,52 @@ body:not(.theme-dark) .about-card {
     text-align: center;
   }
 }
+/* ===============================
+   MOBILE RESPONSIVE OVERRIDES
+   DO NOT TOUCH DESKTOP STYLES
+   =============================== */
+
+@media (max-width: 768px) {
+  /* mobile-only fixes go here */
+  
+  .container,
+  .section,
+  .card-wrapper {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+    .row,
+    .flex-row,
+    .nav-links {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.6rem; }
+  p  { font-size: 1rem; }
+  .card {
+    transform: none !important;
+  }
+
+  .card:hover {
+    transform: none;
+    box-shadow: inherit;
+  }
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .nav-links {
+    width: 100%;
+    align-items: center;
+  }
+
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
