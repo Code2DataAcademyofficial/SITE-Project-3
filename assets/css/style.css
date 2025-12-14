@@ -1291,3 +1291,26 @@ body:not(.theme-dark) .about-card {
     transform: translate(30%, 30%); /* kənardan çox daşmasın */
   }
 }
+/* 📱 MOBILE – FLOWERS SIZE FIX */
+@media (max-width: 768px) {
+
+  /* KONTEYNER DAHA AZ DAŞSIN */
+  .corner-flowers.top-left {
+    transform: translate(-28%, -28%);
+  }
+
+  .corner-flowers.bottom-right {
+    transform: translate(28%, 28%);
+  }
+
+  /* BÖYÜK GÜL */
+  .corner-flowers .flower.big {
+    font-size: 28px;   /* əvvəl böyük idi */
+  }
+
+  /* KİÇİK YAN GÜLLƏR */
+  .corner-flowers .flower.s1,
+  .corner-flowers .flower.s2 {
+    font-size: 18px;
+  }
+}
