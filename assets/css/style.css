@@ -1102,7 +1102,7 @@ body:not(.theme-dark) .about-card {
 }
 /* LOGO — FLOWER ONLY */
 .nav-logo {
-  font-size: 2;          /* 🔥 text yox olur */
+  font-size: 0;          /* 🔥 text yox olur */
 }
 .nav-logo::before {
   content: "🌸";
