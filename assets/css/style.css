@@ -1171,56 +1171,72 @@ body:not(.theme-dark) .about-card {
 }
 
 /* =========================
-   FLOWER CLUSTERS (REPLACES RIBBON)
+   FLOWERS – CARD CORNERS
 ========================= */
 
 .flower-cluster {
   position: absolute;
-  display: flex;
-  gap: 6px;
   pointer-events: none;
-  z-index: 3;
+  z-index: 10;
+  display: flex;
 }
 
-/* SOL ÜST */
+/* 🌸 SOL ÜST KÜNC */
 .flower-cluster.top-left {
-  top: -22px;
-  left: -22px;
+  top: -32px;
+  left: -32px;
 }
 
-/* SOL ALT (SIMMETRIK) */
+/* 🌸 SOL ALT KÜNC */
 .flower-cluster.bottom-left {
-  bottom: -22px;
-  left: -22px;
+  bottom: -32px;
+  left: -32px;
 }
 
-/* ÜMUMİ ÇİÇƏK */
+/* TƏBİİ DÜZÜLÜŞ */
+.flower-cluster .f1 {
+  font-size: 42px;
+}
+
+.flower-cluster .f2 {
+  font-size: 30px;
+  position: absolute;
+  left: 28px;
+  top: 18px;
+}
+
+.flower-cluster .f3 {
+  font-size: 22px;
+  position: absolute;
+  left: 50px;
+  top: 34px;
+}
+
+/* KÖLGƏ */
 .flower-cluster .flower {
-  display: inline-block;
-  filter: drop-shadow(0 6px 16px rgba(236, 72, 153, 0.6));
+  filter: drop-shadow(0 8px 20px rgba(236, 72, 153, 0.55));
 }
-
-/* FƏRQLİ ÖLÇÜLƏR – TƏBİİ GÖRÜNÜŞ */
-.flower-cluster .f1 { font-size: 42px; }
-.flower-cluster .f2 { font-size: 32px; transform: translateY(10px); }
-.flower-cluster .f3 { font-size: 26px; transform: translateY(20px); }
-
-/* =========================
-   MOBILE
-========================= */
 @media (max-width: 768px) {
 
   .flower-cluster.top-left {
-    top: -14px;
-    left: -14px;
+    top: -18px;
+    left: -18px;
   }
 
   .flower-cluster.bottom-left {
-    bottom: -14px;
-    left: -14px;
+    bottom: -18px;
+    left: -18px;
   }
 
-  .flower-cluster .f1 { font-size: 30px; }
-  .flower-cluster .f2 { font-size: 22px; transform: translateY(6px); }
-  .flower-cluster .f3 { font-size: 18px; transform: translateY(12px); }
+  .flower-cluster .f1 { font-size: 28px; }
+  .flower-cluster .f2 {
+    font-size: 20px;
+    left: 18px;
+    top: 12px;
+  }
+  .flower-cluster .f3 {
+    font-size: 15px;
+    left: 34px;
+    top: 24px;
+  }
 }
