@@ -1070,6 +1070,30 @@ body:not(.theme-dark) .about-card {
     transform-origin: top left;
     max-width: 100%;
   }
+  .nav-links {
+    flex-direction: row;          /* ← horizontal */
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;                  /* tight spacing */
+    flex-wrap: wrap;              /* wrap if needed */
+  }
+
+  .nav-item {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.85rem;
+  }
+  @media (max-width: 768px) {
+
+  .navbar {
+    display: flex;
+    align-items: center;
+  }
+
+  .theme-toggle {
+    margin-left: auto;
+  }
+}
+
 
 }
 img {
