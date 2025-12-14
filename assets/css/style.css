@@ -1174,69 +1174,103 @@ body:not(.theme-dark) .about-card {
    FLOWERS – CARD CORNERS
 ========================= */
 
-.flower-cluster {
+.hero-card {
+  position: relative;
+}
+.corner-flowers {
   position: absolute;
   pointer-events: none;
-  z-index: 10;
-  display: flex;
+  z-index: 5;
 }
 
-/* 🌸 SOL ÜST KÜNC */
-.flower-cluster.top-left {
-  top: -32px;
-  left: -32px;
-}
-
-/* 🌸 SOL ALT KÜNC */
-.flower-cluster.bottom-left {
-  bottom: -32px;
-  left: -32px;
-}
-
-/* TƏBİİ DÜZÜLÜŞ */
-.flower-cluster .f1 {
-  font-size: 42px;
-}
-
-.flower-cluster .f2 {
-  font-size: 30px;
+.corner-flowers .flower {
   position: absolute;
-  left: 28px;
-  top: 18px;
+  line-height: 1;
+  filter: drop-shadow(0 10px 22px rgba(236,72,153,0.6));
+}
+.corner-flowers.top-left {
+  top: -42px;
+  left: -42px;
 }
 
-.flower-cluster .f3 {
-  font-size: 22px;
-  position: absolute;
-  left: 50px;
-  top: 34px;
+/* iri – tam küncdə */
+.corner-flowers.top-left .flower.big {
+  font-size: 58px;
+  top: 0;
+  left: 0;
 }
 
-/* KÖLGƏ */
-.flower-cluster .flower {
-  filter: drop-shadow(0 8px 20px rgba(236, 72, 153, 0.55));
+/* kiçiklər – kənarlar boyunca */
+.corner-flowers.top-left .flower.s1 {
+  font-size: 28px;
+  top: -6px;
+  left: 52px;
+}
+
+.corner-flowers.top-left .flower.s2 {
+  font-size: 28px;
+  top: 48px;
+  left: -6px;
+}
+.corner-flowers.bottom-right {
+  bottom: -42px;
+  right: -42px;
+}
+
+/* iri – tam küncdə */
+.corner-flowers.bottom-right .flower.big {
+  font-size: 58px;
+  bottom: 0;
+  right: 0;
+}
+
+/* kiçiklər – kənarlar boyunca */
+.corner-flowers.bottom-right .flower.s1 {
+  font-size: 28px;
+  bottom: -6px;
+  right: 52px;
+}
+
+.corner-flowers.bottom-right .flower.s2 {
+  font-size: 28px;
+  bottom: 48px;
+  right: -6px;
 }
 @media (max-width: 768px) {
 
-  .flower-cluster.top-left {
-    top: -18px;
-    left: -18px;
+  .corner-flowers.top-left {
+    top: -22px;
+    left: -22px;
   }
 
-  .flower-cluster.bottom-left {
-    bottom: -18px;
-    left: -18px;
+  .corner-flowers.bottom-right {
+    bottom: -22px;
+    right: -22px;
   }
 
-  .flower-cluster .f1 { font-size: 28px; }
-  .flower-cluster .f2 {
-    font-size: 20px;
-    left: 18px;
-    top: 12px;
+  .corner-flowers .flower.big {
+    font-size: 36px;
   }
-  .flower-cluster .f3 {
-    font-size: 15px;
+
+  .corner-flowers .flower.s1,
+  .corner-flowers .flower.s2 {
+    font-size: 18px;
+  }
+
+  /* mobile-də də kənar paylanma qorunsun */
+  .corner-flowers.top-left .flower.s1 {
     left: 34px;
-    top: 24px;
+  }
+
+  .corner-flowers.top-left .flower.s2 {
+    top: 30px;
+  }
+
+  .corner-flowers.bottom-right .flower.s1 {
+    right: 34px;
+  }
+
+  .corner-flowers.bottom-right .flower.s2 {
+    bottom: 30px;
   }
 }
