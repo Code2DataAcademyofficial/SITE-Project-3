@@ -1097,6 +1097,28 @@ body:not(.theme-dark) .about-card {
 }
 @media (max-width: 768px) {
   .ribbon-emoji {
-    font-size: 60px !important;
+    font-size: 50px !important;
   }
+}
+/* LOGO — FLOWER ONLY */
+.nav-logo {
+  font-size: 0;          /* 🔥 text yox olur */
+}
+.nav-logo::before {
+  content: "🌸";
+  font-size: 28px;       /* desktop ölçü */
+  display: inline-block;
+}
+@media (max-width: 768px) {
+  .nav-logo::before {
+    font-size: 32px;
+  }
+}
+.nav-logo::before {
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.nav-logo:hover::before {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 10px rgba(236, 72, 153, 0.8));
 }
