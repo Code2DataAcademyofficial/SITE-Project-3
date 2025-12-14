@@ -19,8 +19,8 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Zarifa Ilyasova
-baseurl: "/SITE-Project-3"
-url: "https://code2dataacademyofficial.github.io"
+baseurl: ""
+url: ""
 
 
 # Exclude from processing.

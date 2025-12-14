@@ -1,3 +1,32 @@
+:root {
+  /* DARK MODE – LILA BACKGROUND */
+  --dark-bg-1: #3b1c2f;   /* yuxarı lila */
+  --dark-bg-2: #1a0d16;   /* aşağı tünd bənövşəyi */
+
+  /* DARK MODE – CARD */
+  --dark-card-bg: linear-gradient(
+    145deg,
+    #4a2438,
+    #2a1220
+  );
+
+  --dark-card-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.65),
+    0 0 35px rgba(236, 95, 149, 0.25);
+
+  --dark-text: #f2e9ee;
+  --dark-subtext: #d6c2cc;
+
+  --pink-accent: #ec5f95;
+  --dark-border-pink: #ff6fa5; 
+}
+
+
+:root {
+  --pink-main: #ec407a;   /* About düyməsinin əsil çəhrayısı */
+  --pink-light: #f06292;
+}
+
 /* RESET */
 * {
   margin: 0;
@@ -5,25 +34,20 @@
   box-sizing: border-box;
 }
 
-b/* =========================
+b/* ================
    PAGE BACKGROUND
 ========================= */
 body {
   margin: 0;
   font-family: "Inter", sans-serif;
-
-  background-image: url("../img/background11.jpeg");
+  background-image: url("../img/contact/background11.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
+
 }
-body {
-  background: linear-gradient(
-    180deg,
-    #fffafa 0%,
-    #fde7f1 100%
-  );
-}
+
 
 
 /* =========================
@@ -81,7 +105,7 @@ body {
   top: -38px;
   left: -34px;
 
-  font-size: 100px;   /* ← BÖYÜTDÜK */
+  font-size: 110px;   /* ← BÖYÜTDÜK */
   transform: rotate(-28deg);
 
   transition: transform 0.3s ease, filter 0.3s ease;
@@ -340,7 +364,7 @@ body {
 /* CARD STYLE */
 
 .about-card {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(216, 111, 164, 0.25);
   border-radius: 28px;
   padding: 2.5rem;
 
@@ -490,4 +514,481 @@ body {
 
 .code2data-link:hover {
   text-decoration: underline;
+}
+/* CONTACT HUB */
+
+.contact-hub {
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.contact-title {
+  font-size: 48px;
+  margin-bottom: 10px;
+  color: #d63384;
+}
+
+.contact-subtitle {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 70px;
+}
+
+/* OPTIONS GRID */
+
+.contact-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* SINGLE OPTION */
+
+.contact-option {
+  background: rgba(226, 118, 172, 0.25);
+  border-radius: 30px;
+  padding: 45px 30px;
+  text-decoration: none;
+  color: #c94a8a;
+
+  box-shadow: 0 20px 50px rgba(236, 72, 153, 0.25);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* ICON */
+
+.contact-option .icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+  transition: transform 0.4s ease;
+}
+
+/* TITLE */
+
+.contact-option h3 {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+/* DESCRIPTION */
+
+.contact-option span {
+  font-size: 14px;
+  color: #777;
+}
+
+/* HOVER MAGIC ✨ */
+
+.contact-option:hover {
+  transform: translateY(-16px);
+  box-shadow: 0 35px 90px rgba(236, 72, 153, 0.45);
+}
+
+.contact-option:hover .icon {
+  transform: scale(1.25) rotate(-6deg);
+}
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  margin-bottom: 18px;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+.contact-title {
+  display: inline-block;
+  transition: all 0.35s ease;
+  cursor: default;
+}
+
+/* Hover effekti */
+.contact-title:hover {
+  transform: translateY(-8px);
+  text-shadow:
+    0 0 8px rgba(255, 105, 180, 0.6),
+    0 0 18px rgba(255, 105, 180, 0.5),
+    0 0 32px rgba(255, 182, 193, 0.6);
+}
+/* ===== TEXT HOVER GLOW EFFECT ===== */
+.hover-glow {
+  display: inline-block;
+  transition: transform 0.35s ease, text-shadow 0.35s ease;
+}
+
+.hover-glow:hover {
+  transform: translateY(-6px);
+  text-shadow: 0 0 14px rgba(236, 72, 153, 0.8);
+}
+.nav-logo {
+  font-weight: 600;
+}
+.contact-option h3,
+.contact-option span {
+  color: #c94a8a;
+  transition: color 0.3s ease;
+}
+.contact-option:hover h3,
+.contact-option:hover span {
+  color: #ff4fa3;
+}
+.contact-option:hover h3 {
+  text-shadow: 0 0 12px rgba(255, 79, 163, 0.5);
+}
+.about-bubble p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #c84c86; /* soft pink text */
+}
+.about-bubble h2 {
+  margin-bottom: 20px;
+  color: #e7549b; /* daha canlı çəhrayı */
+  font-size: 1.6rem;
+}
+.about-title {
+  font-size: 1.7rem;
+  margin-bottom: 20px;
+  color: #e7549b;
+}
+/* Theme toggle – navbar düymələri ilə eyni stil */
+/* THEME TOGGLE — ACTIVE NAV BUTTON LOOK */
+.nav-theme-btn {
+  margin-left: 12px;
+  padding: 10px 22px;
+  border-radius: 999px;
+
+  background: linear-gradient(
+    135deg,
+    var(--pink-light),
+    var(--pink-main)
+  );
+
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+
+  border: none;
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px rgba(236, 64, 122, 0.45),
+    0 0 35px rgba(236, 64, 122, 0.55);
+
+  transition: all 0.3s ease;
+}
+
+.nav-theme-btn:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 14px 35px rgba(236, 64, 122, 0.55),
+    0 0 45px rgba(236, 64, 122, 0.65);
+}
+
+/* Hover — daha da canlansın */
+.nav-theme-btn:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 14px 35px rgba(236, 64, 122, 0.55),
+    0 0 45px rgba(236, 64, 122, 0.65);
+}
+.nav-list a.active {
+  background: linear-gradient(
+    135deg,
+    var(--pink-light),
+    var(--pink-main)
+  );
+
+  color: #fff;
+
+  box-shadow:
+    0 10px 25px rgba(236, 64, 122, 0.45),
+    0 0 35px rgba(236, 64, 122, 0.55);
+}
+/* ===================== */
+/* DARK MODE (GLOBAL) */
+/* ===================== */
+
+/* =============================== */
+/* DARK MODE – UNIFIED CARD LOOK */
+/* (CONTACT PAGE STYLE)           */
+/* =============================== */
+
+/* BÜTÜN KART BAŞLIQLARI */
+body.theme-dark h1,
+body.theme-dark h2,
+body.theme-dark h3 {
+  color: #ff6fa5 !important;
+}
+
+/* BÜTÜN KART PARAGRAFLARI */
+body.theme-dark {
+  background: linear-gradient(
+    180deg,
+    var(--dark-bg-1),
+    var(--dark-bg-2)
+  );
+  color: var(--dark-text);
+}
+
+
+/* ICONLAR / SVG / EMOJI */
+body.theme-dark svg,
+body.theme-dark img {
+  filter: brightness(0.95) saturate(1.1);
+}
+/* HOME – hero kart içində əlavə kart / overlay olmasın */
+body.theme-dark .hero-card::before,
+body.theme-dark .hero-card::after,
+body.theme-light .hero-card::before,
+body.theme-light .hero-card::after {
+  content: none !important;
+}
+
+body.theme-dark .hero-card .card,
+body.theme-dark .hero-card .content-card,
+body.theme-dark .hero-card > div {
+  background: none !important;
+  box-shadow: none !important;
+}
+/* ABOUT – dark modda kartlar bitişməsin */
+body.theme-dark .about-card,
+body.theme-dark .content-card,
+body.theme-dark .card {
+  margin-bottom: 0px;
+}
+/* CONTACT – arxadakı dekorativ kartı söndür */
+/* CONTACT – arxadakı böyük dekorativ kartı TAM SÖNDÜR */
+
+/* CONTACT – absolute arxa layer-ləri söndür */
+body.theme-dark .contact-section > div {
+  position: relative;
+}
+
+body.theme-dark .contact-section > div:not(.contact-card):not(.contact-cards) {
+  display: none;
+}
+/* CONTACT – dark modda arxadakı overlay / ghost kartı söndür */
+/* =============================== */
+/* CONTACT – DARK MODE BACK BOX KILL */
+/* =============================== */
+
+body.theme-dark .contact-section::before,
+body.theme-dark .contact-section::after,
+body.theme-dark .contact::before,
+body.theme-dark .contact::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+
+/* Contact səhifəsində arxa böyük qara layer varsa – hamısını söndür */
+body.theme-dark .contact-section {
+  background: transparent !important;
+}
+
+body.theme-dark .contact-section  {
+  box-shadow: none;
+}
+
+/* ===============================
+   DARK MODE – UNIFIED CARD COLOR
+================================ */
+
+body.theme-dark .hero-card,
+body.theme-dark .about-card,
+body.theme-dark .contact-option {
+  background: var(--dark-card-bg) !important;
+  color: #f2e9ee;
+}
+/* ===============================
+   DARK MODE – UNIFIED CARD COLOR
+================================ */
+
+
+
+body.theme-dark .hero-card,
+body.theme-dark .about-card,
+body.theme-dark .contact-option {
+  background: var(--dark-card-bg) !important;
+  color: #f2e9ee;
+}
+body.theme-dark .hero-card:not(:hover),
+body.theme-dark .about-card:not(:hover),
+body.theme-dark .contact-option:not(:hover) {
+  box-shadow: var(--dark-card-shadow) !important;
+}
+
+body.theme-dark {
+  background: linear-gradient(
+    180deg,
+    #3b1c2f 0%,
+    #1a0d16 100%
+  ) !important;
+
+  color: #f2e9ee;
+}
+body.theme-dark {
+  background: linear-gradient(
+    180deg,
+    #5a2a4d 0%,   /* AÇIQ LİLA */
+    #2b1324 100% /* TƏMİZ TUND */
+  ) !important;
+
+  color: #f2e9ee;
+}
+body.theme-light .about {
+  background: linear-gradient(
+    180deg,
+    #fff1f5 0%,
+    #ffe4ec 100%
+  );
+}
+body.theme-dark .about {
+  background: linear-gradient(
+    180deg,
+    #5a2a4d 0%,   /* AÇIQ LİLA */
+    #2b1324 100% /* TƏMİZ TUND */
+  ) !important;
+}
+/* ===============================
+   DARK MODE – CARD TEXT FIX
+================================ */
+
+body.theme-dark .hero-card p,
+body.theme-dark .about-card p,
+body.theme-dark .contact-option span,
+body.theme-dark .contact-option p {
+  color: #f2e9ee !important;   /* AĞ / KREM */
+  opacity: 0.95;
+}
+
+/* Daha xırda textlər üçün */
+body.theme-dark small,
+body.theme-dark .subtext {
+  color: #e6d6de !important;
+}
+/* ===============================
+   DARK MODE – PINK BORDER (GLOBAL)
+================================ */
+
+body.theme-dark .hero-card,
+body.theme-dark .about-card,
+body.theme-dark .contact-option {
+  border: 2.5px solid var(--dark-border-pink) !important;
+}
+/* ===============================
+   DARK MODE – HERO CARD HOVER GLOW
+================================ */
+
+body.theme-dark .hero-card:hover {
+  box-shadow:
+    0 0 40px rgba(255, 111, 165, 0.6),
+    0 0 80px rgba(255, 111, 165, 0.35),
+    0 30px 70px rgba(0, 0, 0, 0.7) !important;
+
+  transform: translateY(-8px);
+}
+/* ===============================
+   FLOATING CONTACT CARDS
+================================ */
+
+.contact-option {
+  animation: contact-float 6s ease-in-out infinite;
+}
+
+@keyframes contact-float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-14px); }
+  100% { transform: translateY(0); }
+}
+/* ===============================
+   LIGHT MODE – PINK BORDER
+================================ */
+
+body:not(.theme-dark) .hero-card,
+body:not(.theme-dark) .about-card,
+body:not(.theme-dark) .contact-option {
+  border: 3px solid rgba(236, 95, 149, 0.45);
+}
+/* ===============================
+   LIGHT MODE – SECTIONS TRANSPARENT
+================================ */
+
+body:not(.theme-dark) .hero,
+body:not(.theme-dark) .about,
+body:not(.theme-dark) .contact-hub,
+body:not(.theme-dark) .contact-section {
+  background: transparent !important;
+}
+/* ===============================
+   FINAL FIX – LIGHT MODE BACKGROUND
+================================ */
+
+body:not(.theme-dark) {
+  background-image: url("../img/contact/background11.jpeg") !important;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+/* LIGHT MODE – REMOVE ALL SECTION BACKGROUNDS */
+body:not(.theme-dark) .hero,
+body:not(.theme-dark) .about,
+body:not(.theme-dark) .contact-hub,
+body:not(.theme-dark) .contact-section,
+body:not(.theme-dark) section {
+  background: transparent !important;
+}
+/* ===============================
+   UNIFIED CARD HOVER GLOW
+================================ */
+
+.hero-card:hover,
+.about-card:hover,
+.contact-option:hover {
+  transform: translateY(-14px) scale(1.02);
+  box-shadow:
+    0 0 35px rgba(236, 72, 153, 0.45),
+    0 0 70px rgba(236, 72, 153, 0.25),
+    0 30px 80px rgba(0, 0, 0, 0.35);
+}
+/* FIX: ABOUT cards – light mode color same as CONTACT */
+
+body:not(.theme-dark) .about-card {
+  background: rgba(226, 118, 172, 0.25) !important;
+}
+/* ===============================
+   SCROLL REVEAL (JS ilə)
+================================ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ===============================
+   PROFILE IMAGE HOVER LIFT
+================================ */
+
+.hero-image img {
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.hero-image img:hover {
+  transform: translateY(-14px) scale(1.04);
+  box-shadow:
+    0 0 35px rgba(236, 72, 153, 0.55),
+    0 0 70px rgba(236, 72, 153, 0.35),
+    0 25px 60px rgba(0, 0, 0, 0.45);
 }
