@@ -1100,4 +1100,29 @@ img {
   max-width: 100%;
   height: auto;
 }
+@media (max-width: 768px) {
+
+  /* FORCE NAVBAR HORIZONTAL */
+  .nav-links {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+  }
+
+  /* OVERRIDE STACKING CAUSE */
+  .nav-links a,
+  .nav-item {
+    width: auto !important;
+    display: inline-flex !important;
+    white-space: nowrap;
+  }
+
+  /* DARK / LIGHT TO END */
+  .theme-toggle {
+    margin-left: auto;
+  }
+}
 
