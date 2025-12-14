@@ -1181,7 +1181,11 @@ body:not(.theme-dark) .about-card {
 .corner-flowers {
   position: absolute;
   z-index: 20;                 /* kartdan yuxarı */
-  pointer-events: none;
+  pointer-events: none;       /* hover qəbul etsin */
+}
+
+.corner-flowers .flower {
+  pointer-events: auto; /* TƏK GÜLLƏR hover alır */
 }
 
 .corner-flowers.top-left {
