@@ -1036,7 +1036,7 @@ body:not(.theme-dark) .about-card {
 
   /* ===== RIBBON / BANTIKCHE FIX ===== */
   .ribbon-emoji {
-    font-size: 60px !important;   /* 🔥 ƏSAS FIX */
+    font-size: 80px !important;   /* 🔥 ƏSAS FIX */
     top: -12px;
     left: -12px;
     transform: rotate(-28deg);    /* scale YOX */
