@@ -1066,7 +1066,7 @@ body:not(.theme-dark) .about-card {
     .ribbon,
   .hero-ribbon,
   .decorative-ribbon {
-    transform: scale(0.75);
+    transform: scale(0.5);
     transform-origin: top left;
     max-width: 100%;
   }
