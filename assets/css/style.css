@@ -1144,4 +1144,29 @@ body:not(.theme-dark) .about-card {
   }
 }
 
+/* NAVBAR BUTTON – BASE SHADOW (ALL DEVICES) */
+.nav-item {
+  box-shadow:
+    0 6px 18px rgba(236, 72, 153, 0.35),
+    0 0 22px rgba(236, 72, 153, 0.25);
+}
+/* HOVER (DESKTOP) */
+.nav-item:hover {
+  box-shadow:
+    0 12px 32px rgba(236, 72, 153, 0.6),
+    0 0 40px rgba(236, 72, 153, 0.45);
+}
+@media (max-width: 768px) {
+  .nav-item:active {
+    transform: scale(0.96);
+    box-shadow:
+      0 10px 28px rgba(236, 72, 153, 0.7),
+      0 0 45px rgba(236, 72, 153, 0.5);
+  }
+}
+.nav-item.active {
+  box-shadow:
+    0 14px 36px rgba(236, 72, 153, 0.75),
+    0 0 50px rgba(236, 72, 153, 0.55);
+}
 
