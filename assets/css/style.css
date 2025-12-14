@@ -1101,24 +1101,47 @@ body:not(.theme-dark) .about-card {
   }
 }
 /* LOGO — FLOWER ONLY */
+/* LOGO CONTAINER */
 .nav-logo {
-  font-size: 2;          /* 🔥 text yox olur */
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  line-height: 1;
 }
-.nav-logo::before {
-  content: "🌸";
-  font-size: 40px;       /* desktop ölçü */
+
+/* ÜMUMİ ÇİÇƏK */
+.nav-logo .flower {
   display: inline-block;
-}
-@media (max-width: 768px) {
-  .nav-logo::before {
-    font-size: 32px;
-  }
-}
-.nav-logo::before {
   transition: transform 0.25s ease, filter 0.25s ease;
 }
 
-.nav-logo:hover::before {
-  transform: scale(1.15);
+/* BÖYÜK ÇİÇƏK */
+.nav-logo .flower.big {
+  font-size: 42px;   /* desktop */
+}
+
+/* KİÇİK ÇİÇƏK */
+.nav-logo .flower.small {
+  font-size: 28px;   /* desktop */
+  transform: translateY(6px); /* estetik offset */
+}
+
+/* HOVER */
+.nav-logo:hover .flower {
+  transform: scale(1.12);
   filter: drop-shadow(0 0 10px rgba(236, 72, 153, 0.8));
 }
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+  .nav-logo .flower.big {
+    font-size: 32px;
+  }
+
+  .nav-logo .flower.small {
+    font-size: 20px;
+    transform: translateY(4px);
+  }
+}
+
+
