@@ -1095,3 +1095,8 @@ body:not(.theme-dark) .about-card {
 }
 
 }
+@media (max-width: 768px) {
+  .ribbon-emoji {
+    font-size: 60px !important;
+  }
+}
