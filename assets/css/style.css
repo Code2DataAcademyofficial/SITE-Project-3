@@ -1288,7 +1288,7 @@ body:not(.theme-dark) .about-card {
   }
 
   .corner-flowers {
-    transform: translate(30%, 30%); /* kənardan çox daşmasın */
+    transform: translate(40%, 40%); /* kənardan çox daşmasın */
   }
 }
 /* 📱 MOBILE – FLOWERS SIZE FIX */
@@ -1300,7 +1300,7 @@ body:not(.theme-dark) .about-card {
   }
 
   .corner-flowers.bottom-right {
-    transform: translate(28%, 28%);
+    transform: translate(40%, 40%);
   }
 
   /* BÖYÜK GÜL */
