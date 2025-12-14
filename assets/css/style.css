@@ -1197,7 +1197,7 @@ body:not(.theme-dark) .about-card {
 }
 
 .corner-flowers.top-left .flower.s1 {
-  font-size: 26px;
+  font-size: 36px;
   position: absolute;
   top: 8px;
   left: 48px;
@@ -1205,7 +1205,7 @@ body:not(.theme-dark) .about-card {
 }
 
 .corner-flowers.top-left .flower.s2 {
-  font-size: 26px;
+  font-size: 36px;
   position: absolute;
   top: 48px;
   left: 6px;
@@ -1223,7 +1223,7 @@ body:not(.theme-dark) .about-card {
 }
 
 .corner-flowers.bottom-right .flower.s1 {
-  font-size: 30px;
+  font-size: 36px;
   position: absolute;
   bottom: 9px;
   right: 52px;
@@ -1231,7 +1231,7 @@ body:not(.theme-dark) .about-card {
 }
 
 .corner-flowers.bottom-right .flower.s2 {
-  font-size: 30px;
+  font-size: 36px;
   position: absolute;
   bottom: 52px;
   right: 9px;
