@@ -1279,12 +1279,12 @@ body:not(.theme-dark) .about-card {
 @media (max-width: 768px) {
 
   .corner-flowers .flower.big {
-    font-size: 36px;   /* 🔽 böyük gül kiçildi */
+    font-size: 24px;   /* 🔽 böyük gül kiçildi */
   }
 
   .corner-flowers .flower.s1,
   .corner-flowers .flower.s2 {
-    font-size: 24px;   /* 🔽 yan güllər kiçildi */
+    font-size: 15px;   /* 🔽 yan güllər kiçildi */
   }
 
   .corner-flowers {
@@ -1305,12 +1305,12 @@ body:not(.theme-dark) .about-card {
 
   /* BÖYÜK GÜL */
   .corner-flowers .flower.big {
-    font-size: 28px;   /* əvvəl böyük idi */
+    font-size: 24px;   /* əvvəl böyük idi */
   }
 
   /* KİÇİK YAN GÜLLƏR */
   .corner-flowers .flower.s1,
   .corner-flowers .flower.s2 {
-    font-size: 18px;
+    font-size: 15px;
   }
 }
