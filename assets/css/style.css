@@ -1097,16 +1097,16 @@ body:not(.theme-dark) .about-card {
 }
 @media (max-width: 768px) {
   .ribbon-emoji {
-    font-size: 50px !important;
+    font-size: 48px !important;
   }
 }
 /* LOGO — FLOWER ONLY */
 .nav-logo {
-  font-size: 0;          /* 🔥 text yox olur */
+  font-size: 2;          /* 🔥 text yox olur */
 }
 .nav-logo::before {
   content: "🌸";
-  font-size: 28px;       /* desktop ölçü */
+  font-size: 40px;       /* desktop ölçü */
   display: inline-block;
 }
 @media (max-width: 768px) {
