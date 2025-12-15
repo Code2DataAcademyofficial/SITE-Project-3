@@ -1404,27 +1404,39 @@ body:not(.theme-dark) .about-card {
 }
 /* 🌸 FALLING FLOWERS */
 /* 🌸 FLOWER OVERLAY */
+
+/* 🌸 FLOWER RAIN OVERLAY */
 #flower-overlay {
   position: fixed;
   inset: 0;
   pointer-events: none;
   overflow: hidden;
-  z-index: 999999;
+  z-index: 9999;
 }
 
-/* 🌸 FLOWER */
-#flower-overlay .flower {
+.flower {
   position: absolute;
-  top: -60px;
-
-  animation-name: flower-fall;
+  top: -40px;
+  font-size: 22px;
+  animation-name: fall;
   animation-timing-function: linear;
-  animation-fill-mode: forwards;
+  opacity: 0.9;
 }
 
-/* FALL ANIMATION */
-@keyframes flower-fall {
-  to {
-    transform: translateY(120vh) rotate(360deg);
+/* mobil üçün bir az kiçilt */
+@media (max-width: 768px) {
+  .flower {
+    font-size: 16px;
+  }
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
   }
 }

@@ -1,45 +1,50 @@
-// əvvəlki interval varsa, sil
-if (window.flowerInterval) {
-  clearInterval(window.flowerInterval);
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const overlay = document.getElementById("flower-overlay");
+  if (!overlay) return;
 
-// overlay tap
-const overlay = document.getElementById("flower-overlay");
-if (!overlay) {
-  console.error("flower-overlay tapılmadı");
-}
-
-// təmiz start
-overlay.innerHTML = "";
-
-const maxFlowers = 45;
-
-function createFlower() {
-  const flower = document.createElement("div");
-  flower.className = "flower";
-  flower.textContent = "🌸";
-
-  flower.style.left = Math.random() * 100 + "vw";
-  flower.style.fontSize = 18 + Math.random() * 22 + "px";
-  flower.style.opacity = 0.6 + Math.random() * 0.4;
-  flower.style.animationDuration = 8 + Math.random() * 6 + "s";
-
-  overlay.appendChild(flower);
-
-  setTimeout(() => flower.remove(), 15000);
-}
-
-window.flowerInterval = setInterval(() => {
-  if (overlay.children.length < maxFlowers) {
-    createFlower();
+  // əvvəlki interval varsa, təmizlə
+  if (window.flowerInterval) {
+    clearInterval(window.flowerInterval);
   }
-}, 250);
 
-// 4 saniyədən sonra yumşaq sönsün
-setTimeout(() => {
-  clearInterval(window.flowerInterval);
-  [...overlay.children].forEach(f => {
-    f.style.transition = "opacity 2.5s ease";
-    f.style.opacity = "0";
-  });
-}, 4000);
+  let intensity = 300; // başlanğıcda sıx yağış
+  const minIntensity = 1200; // sonda çox seyrək
+  const decreaseRate = 120; // neçə ms-də bir zəifləsin
+
+  function createFlower() {
+    const flower = document.createElement("div");
+    flower.className = "flower";
+    flower.innerText = "🌸";
+
+    flower.style.left = Math.random() * 100 + "vw";
+    flower.style.animationDuration = 4 + Math.random() * 3 + "s";
+    flower.style.fontSize = 16 + Math.random() * 14 + "px";
+
+    overlay.appendChild(flower);
+
+    // animasiya bitəndə silinsin
+    setTimeout(() => {
+      flower.remove();
+    }, 8000);
+  }
+
+  // interval ilə gül yarat
+  window.flowerInterval = setInterval(() => {
+    createFlower();
+  }, intensity);
+
+  // tədricən zəiflət
+  const weaken = setInterval(() => {
+    intensity += 200;
+
+    clearInterval(window.flowerInterval);
+    window.flowerInterval = setInterval(() => {
+      createFlower();
+    }, intensity);
+
+    if (intensity >= minIntensity) {
+      clearInterval(window.flowerInterval);
+      clearInterval(weaken);
+    }
+  }, decreaseRate);
+});
