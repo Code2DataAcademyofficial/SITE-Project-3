@@ -1404,35 +1404,6 @@ body:not(.theme-dark) .about-card {
 }
 /* 🌸 FALLING FLOWERS */
 /* 🌸 FLOWER OVERLAY */
-
-#flower-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 99999;
-  overflow: hidden;
-}
-
-.sakura-petal {
-  position: absolute;
-  top: -40px;
-  animation-name: sakuraFall;
-  animation-timing-function: linear;
-}
-
-@keyframes sakuraFall {
-  from {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  to {
-    transform: translateY(110vh);
-    opacity: 0.2;
-  }
-}
 /* 🌸 FALLING FLOWERS – FINAL FIX */
 #flower-overlay {
   position: fixed;
