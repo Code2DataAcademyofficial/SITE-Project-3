@@ -1402,3 +1402,29 @@ body:not(.theme-dark) .about-card {
     gap: 28px;
   }
 }
+/* 🌸 FALLING FLOWERS */
+.falling-flower {
+  position: fixed;
+  top: -40px;
+  z-index: 9999;
+  pointer-events: none;
+
+  animation-name: flower-fall;
+  animation-timing-function: linear;
+}
+
+/* düşmə animasiyası */
+@keyframes flower-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
+/* yumşaq yoxa çıxma */
+.falling-flower.fade-out {
+  transition: opacity 2.5s ease;
+  opacity: 0;
+}
