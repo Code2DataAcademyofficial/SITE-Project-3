@@ -1452,11 +1452,11 @@ body:not(.theme-dark) .about-card {
 
 @keyframes flowerFall {
   from {
-    transform: translateY(0) rotate(0deg);
-    opacity: 1;
+    transform: translateY(0);
   }
   to {
-    transform: translateY(110vh) rotate(360deg);
-    opacity: 0;
+    transform: translateY(110vh);
   }
 }
+
+
