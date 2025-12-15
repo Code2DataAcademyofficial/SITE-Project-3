@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     flower.className = "falling-flower";
     flower.innerText = "🌸";
 
-    flower.style.left = Math.random() * 100 + "vw";
+    flower.style.left = Math.random() * 100 + "%";
     flower.style.fontSize = 16 + Math.random() * 16 + "px";
     flower.style.animationDuration = 4 + Math.random() * 3 + "s";
 
