@@ -6,11 +6,10 @@ if (window.flowerInterval) {
 // overlay tap
 const overlay = document.getElementById("flower-overlay");
 if (!overlay) {
-  console.error("flower-overlay YOXDUR");
-  return;
+  console.error("flower-overlay tapılmadı");
 }
 
-// əvvəlki gülləri təmizlə
+// təmiz start
 overlay.innerHTML = "";
 
 const maxFlowers = 45;
