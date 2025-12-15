@@ -1,29 +1,35 @@
-document.addEventListener("DOMContentLoaded", () => {
+function startFlowerRain() {
   const overlay = document.getElementById("flower-overlay");
-  if (!overlay) {
-    console.error("flower-overlay tapilmadi");
-    return;
+  if (!overlay) return;
+
+  // hər page keçidində əvvəlkiləri təmizləmirik,
+  // çünki artıq davamlı yağış istəyirik
+
+  setInterval(() => {
+    const petal = document.createElement("div");
+    petal.className = "flower-petal";
+    petal.textContent = "🌸";
+
+    petal.style.left = Math.random() * 100 + "%";
+    petal.style.fontSize = 14 + Math.random() * 18 + "px";
+    petal.style.animationDuration = 6 + Math.random() * 4 + "s";
+
+    overlay.appendChild(petal);
+
+    // performans üçün avtomatik silinsin
+    setTimeout(() => {
+      petal.remove();
+    }, 12000);
+
+  }, 300); // sürəti burdan tənzimləyə bilərsən
+}
+
+/* 🚀 SAYT AÇILANDA */
+window.addEventListener("load", startFlowerRain);
+
+/* 🔁 PAGE CHANGE (Safari FIX) */
+document.addEventListener("visibilitychange", () => {
+  if (!document.hidden) {
+    startFlowerRain();
   }
-
-  let created = 0;
-  const maxFlowers = 35;
-
-  const interval = setInterval(() => {
-    const flower = document.createElement("div");
-    flower.className = "falling-flower";
-    flower.innerText = "🌸";
-
-    flower.style.left = Math.random() * 100 + "%";
-    flower.style.fontSize = 16 + Math.random() * 16 + "px";
-    flower.style.animationDuration = 4 + Math.random() * 3 + "s";
-
-    overlay.appendChild(flower);
-
-    setTimeout(() => flower.remove(), 8000);
-
-    created++;
-    if (created >= maxFlowers) {
-      clearInterval(interval);
-    }
-  }, 200);
 });
