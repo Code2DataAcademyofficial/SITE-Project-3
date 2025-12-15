@@ -1458,15 +1458,5 @@ body:not(.theme-dark) .about-card {
     transform: translateY(110vh);
   }
 }
-.nav-item::before {
-  content: "";
-}
-
-.nav-item.active::before {
-  content: "🌸";
-}
-.nav-item:hover::before {
-  transform: translateY(-50%) scale(1.2);
-}
 
 
