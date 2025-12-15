@@ -1,30 +1,35 @@
-let flowerInterval = null;
+let lastSpawn = 0;
+const spawnDelay = 280; // yağış sürəti (ms)
+let started = false;
 
 function startFlowerRain() {
-  // Əgər artıq işləyirsə, bir də başlatma
-  if (flowerInterval !== null) return;
+  if (started) return;
+  started = true;
 
   const overlay = document.getElementById("flower-overlay");
   if (!overlay) return;
 
-  flowerInterval = setInterval(() => {
-    const petal = document.createElement("div");
-    petal.className = "flower-petal";
-    petal.textContent = "🌸";
+  function loop(time) {
+    if (time - lastSpawn > spawnDelay) {
+      lastSpawn = time;
 
-    petal.style.left = Math.random() * 100 + "%";
-    petal.style.fontSize = 14 + Math.random() * 18 + "px";
-    petal.style.animationDuration = 6 + Math.random() * 4 + "s";
+      const flower = document.createElement("div");
+      flower.className = "falling-flower";
+      flower.textContent = "🌸";
 
-    overlay.appendChild(petal);
+      flower.style.left = Math.random() * 100 + "%";
+      flower.style.fontSize = 14 + Math.random() * 20 + "px";
+      flower.style.animationDuration = 6 + Math.random() * 4 + "s";
 
-    // ekrandan çıxandan sonra silinsin
-    setTimeout(() => {
-      petal.remove();
-    }, 15000);
+      overlay.appendChild(flower);
 
-  }, 300); // YAĞIŞ SÜRƏTİ
+      setTimeout(() => flower.remove(), 15000);
+    }
+
+    requestAnimationFrame(loop);
+  }
+
+  requestAnimationFrame(loop);
 }
 
-// ❗ YALNIZ BİR DƏFƏ — SAYT AÇILANDA
 window.addEventListener("load", startFlowerRain);
