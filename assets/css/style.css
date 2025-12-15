@@ -1405,29 +1405,31 @@ body:not(.theme-dark) .about-card {
 /* 🌸 FALLING FLOWERS */
 /* 🌸 FLOWER OVERLAY */
 
-#flower-overlay {
+#sakura-overlay {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   pointer-events: none;
+  z-index: 99999;
   overflow: hidden;
-  z-index: 9999;
 }
 
-.flower {
+.sakura-petal {
   position: absolute;
   top: -40px;
-  font-size: 22px;
-  opacity: 0.9;
-  animation: fall linear forwards;
+  animation-name: sakuraFall;
+  animation-timing-function: linear;
 }
 
-@keyframes fall {
+@keyframes sakuraFall {
   from {
-    transform: translateY(0) rotate(0deg);
+    transform: translateY(0);
     opacity: 1;
   }
   to {
-    transform: translateY(110vh) rotate(360deg);
-    opacity: 0;
+    transform: translateY(110vh);
+    opacity: 0.2;
   }
 }
