@@ -1405,7 +1405,6 @@ body:not(.theme-dark) .about-card {
 /* 🌸 FALLING FLOWERS */
 /* 🌸 FLOWER OVERLAY */
 
-/* 🌸 FLOWER RAIN OVERLAY */
 #flower-overlay {
   position: fixed;
   inset: 0;
@@ -1418,24 +1417,16 @@ body:not(.theme-dark) .about-card {
   position: absolute;
   top: -40px;
   font-size: 22px;
-  animation-name: fall;
-  animation-timing-function: linear;
   opacity: 0.9;
-}
-
-/* mobil üçün bir az kiçilt */
-@media (max-width: 768px) {
-  .flower {
-    font-size: 16px;
-  }
+  animation: fall linear forwards;
 }
 
 @keyframes fall {
-  0% {
+  from {
     transform: translateY(0) rotate(0deg);
     opacity: 1;
   }
-  100% {
+  to {
     transform: translateY(110vh) rotate(360deg);
     opacity: 0;
   }
