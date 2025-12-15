@@ -1,11 +1,13 @@
+let flowerInterval = null;
+
 function startFlowerRain() {
+  // Əgər artıq işləyirsə, bir də başlatma
+  if (flowerInterval !== null) return;
+
   const overlay = document.getElementById("flower-overlay");
   if (!overlay) return;
 
-  // hər page keçidində əvvəlkiləri təmizləmirik,
-  // çünki artıq davamlı yağış istəyirik
-
-  setInterval(() => {
+  flowerInterval = setInterval(() => {
     const petal = document.createElement("div");
     petal.className = "flower-petal";
     petal.textContent = "🌸";
@@ -16,20 +18,13 @@ function startFlowerRain() {
 
     overlay.appendChild(petal);
 
-    // performans üçün avtomatik silinsin
+    // ekrandan çıxandan sonra silinsin
     setTimeout(() => {
       petal.remove();
-    }, 12000);
+    }, 15000);
 
-  }, 300); // sürəti burdan tənzimləyə bilərsən
+  }, 300); // YAĞIŞ SÜRƏTİ
 }
 
-/* 🚀 SAYT AÇILANDA */
+// ❗ YALNIZ BİR DƏFƏ — SAYT AÇILANDA
 window.addEventListener("load", startFlowerRain);
-
-/* 🔁 PAGE CHANGE (Safari FIX) */
-document.addEventListener("visibilitychange", () => {
-  if (!document.hidden) {
-    startFlowerRain();
-  }
-});
