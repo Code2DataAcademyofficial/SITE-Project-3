@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const maxFlowers = 50; // əvvəl 25 idi → daha intensiv
+  const maxFlowers = 50;
+  const overlay = document.getElementById("flower-overlay");
+
+  if (!overlay) return; // təhlükəsizlik
 
   function createFlower() {
     const flower = document.createElement("div");
@@ -7,29 +10,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
     flower.innerText = "🌸";
 
-    flower.style.left = Math.random() * window.innerWidth + "px";
+    // EKRAN ENİNƏ GÖRƏ
+    flower.style.left = Math.random() * 100 + "vw";
 
-    // Daha uzun düşmə
     flower.style.animationDuration = 8 + Math.random() * 6 + "s";
-
-    // Ölçü variasiyası
     flower.style.fontSize = 18 + Math.random() * 22 + "px";
-
-    // Daha stabil görünüş
     flower.style.opacity = 0.6 + Math.random() * 0.4;
 
-    document.body.appendChild(flower);
+    // ❌ body YOX
+    // document.body.appendChild(flower);
 
-    // DOM-da daha uzun qalsın
+    // ✅ OVERLAY
+    overlay.appendChild(flower);
+
     setTimeout(() => {
       flower.remove();
     }, 15000);
   }
 
-  // Daha tez-tez yaransın
-  setInterval(() => {
-    if (document.querySelectorAll(".flower").length < maxFlowers) {
+  const interval = setInterval(() => {
+    if (overlay.children.length < maxFlowers) {
       createFlower();
     }
-  }, 250); // əvvəl 400 ms idi
+  }, 250);
+
+  // 🌸 4 saniyədən sonra yumşaq sönsün
+  setTimeout(() => {
+    clearInterval(interval);
+    overlay.querySelectorAll(".flower").forEach(f => {
+      f.style.transition = "opacity 2.5s ease";
+      f.style.opacity = "0";
+    });
+  }, 4000);
 });

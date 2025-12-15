@@ -1431,3 +1431,27 @@ body:not(.theme-dark) .about-card {
   transition: opacity 2.5s ease;
   opacity: 0;
 }
+/* 🌸 FLOWER OVERLAY */
+#flower-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9999;
+}
+.flower {
+  position: absolute;
+  top: -40px;
+  animation-name: flower-fall;
+  animation-timing-function: linear;
+}
+
+@keyframes flower-fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
