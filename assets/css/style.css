@@ -1403,6 +1403,7 @@ body:not(.theme-dark) .about-card {
   }
 }
 /* 🌸 FALLING FLOWERS */
+/* 🌸 FLOWER OVERLAY */
 #flower-overlay {
   position: fixed;
   inset: 0;
@@ -1411,13 +1412,18 @@ body:not(.theme-dark) .about-card {
   z-index: 999999;
 }
 
+/* 🌸 FLOWER */
 #flower-overlay .flower {
   position: absolute;
-  top: -50px;
-  animation: fall linear forwards;
+  top: -60px;
+
+  animation-name: flower-fall;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
 }
 
-@keyframes fall {
+/* FALL ANIMATION */
+@keyframes flower-fall {
   to {
     transform: translateY(120vh) rotate(360deg);
   }
