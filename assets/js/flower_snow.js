@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const interval = setInterval(() => {
     const flower = document.createElement("div");
-    flower.className = "flower";
+    flower.className = "falling-flower";
     flower.innerText = "🌸";
 
     flower.style.left = Math.random() * 100 + "vw";
