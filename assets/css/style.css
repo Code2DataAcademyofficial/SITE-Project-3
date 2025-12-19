@@ -1822,3 +1822,25 @@ body.theme-dark .home-fab:hover {
     font-size: 0.8rem;
   }
 }
+/* ===============================
+   PROJECT FLOATING (ABOUT STYLE)
+================================ */
+
+.project-block.floating-card {
+  animation: project-float 6s ease-in-out infinite;
+}
+
+@keyframes project-float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.project-block:hover {
+  animation-play-state: paused; /* hover edəndə float dayanır */
+}
