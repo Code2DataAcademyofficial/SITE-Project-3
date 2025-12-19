@@ -1868,3 +1868,51 @@ body.theme-dark .home-fab:hover {
       0 0 50px rgba(236, 72, 153, 0.55);
   }
 }
+/* ===============================
+   HOME NAVIGATION (FINAL)
+================================ */
+
+/* Default — hər ikisi gizli */
+.home-fab,
+.mobile-back-btn {
+  display: none;
+}
+
+/* ===============================
+   DESKTOP — HOME BALLOON
+================================ */
+@media (min-width: 769px) {
+  .home-fab {
+    display: inline-flex;
+  }
+}
+
+/* ===============================
+   MOBILE — BACK ARROW
+================================ */
+@media (max-width: 768px) {
+  .mobile-back-btn {
+    display: block;
+
+    position: absolute;
+    top: 58px;      /* gül logosunun altı */
+    left: 18px;
+
+    font-size: 26px;
+    font-weight: 600;
+    color: #ec4899;
+    text-decoration: none;
+
+    opacity: 0.85;
+    z-index: 9999;
+
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  /* Mobil-də home baloncuk GİZLƏNSİN */
+  .home-fab {
+    display: none !important;
+  }
+}
