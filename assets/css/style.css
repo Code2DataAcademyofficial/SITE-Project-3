@@ -1664,3 +1664,33 @@ body.theme-dark .project-actions .btn:hover {
     font-size: 2rem;
   }
 }
+/* ===============================
+   PROJECTS – LIGHT MODE PINK FIX
+   (ABOUT KİMİ)
+================================ */
+
+body.theme-light .project-block {
+  background: rgba(226, 118, 172, 0.25) !important; /* 🩷 PEMBE */
+  border: 3px solid rgba(236, 72, 153, 0.45) !important;
+  border-radius: 32px;
+
+  box-shadow:
+    0 25px 70px rgba(236, 72, 153, 0.25);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* TEXT RƏNGLƏRİ – ABOUT İLƏ EYNİ */
+body.theme-light .project-block h2 {
+  color: #e7549b !important;
+}
+
+body.theme-light .project-block .project-meta {
+  color: #c94a8a !important;
+}
+
+body.theme-light .project-block p {
+  color: #374151 !important;
+}
