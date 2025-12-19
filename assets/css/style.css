@@ -1840,17 +1840,6 @@ body.theme-dark .home-fab:hover {
   animation: project-float 6s ease-in-out infinite;
 }
 
-@keyframes project-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-14px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
 .project-block:hover {
   animation-play-state: paused; /* hover edəndə float dayanır */
 }
@@ -1887,3 +1876,27 @@ body.theme-dark .home-fab:hover {
   }
 }
 
+/* ===============================
+   PROJECT FLOAT — ABOUT STYLE (FINAL)
+================================ */
+
+/* FLOAT */
+.project-block.floating-card {
+  animation: float-card 6s ease-in-out infinite;
+}
+
+/* HOVER — FLOAT DAYANMIR */
+.project-block:hover {
+  transform: translateY(-16px) scale(1.02);
+  box-shadow:
+    0 0 35px rgba(236, 72, 153, 0.55),
+    0 0 70px rgba(236, 72, 153, 0.35),
+    0 35px 100px rgba(236, 72, 153, 0.45);
+}
+
+/* FLOAT KEYFRAMES — ABOUT İLƏ EYNİ */
+@keyframes float-card {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-14px); }
+  100% { transform: translateY(0); }
+}
