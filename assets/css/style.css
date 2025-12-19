@@ -1900,3 +1900,45 @@ body.theme-dark .home-fab:hover {
   50%  { transform: translateY(-14px); }
   100% { transform: translateY(0); }
 }
+/* ===============================
+   MOBILE NAVBAR OVERFLOW FIX
+================================ */
+
+@media (max-width: 768px) {
+
+  .nav-container {
+    padding: 8px 10px;
+    gap: 6px;
+  }
+
+  /* LOGO biraz kiçilsin */
+  .nav-logo .flower.big {
+    font-size: 26px;
+  }
+
+  .nav-logo .flower.small {
+    font-size: 18px;
+    transform: translateY(3px);
+  }
+
+  /* NAV LINKS daha kompakt */
+  .nav-links {
+    gap: 4px;
+    flex-shrink: 1;
+  }
+
+  .nav-item {
+    padding: 6px 10px;     /* 🔥 əsas fix */
+    font-size: 0.72rem;    /* 🔥 əsas fix */
+    min-width: unset;
+  }
+
+  /* THEME TOGGLE kiçilsin */
+  .nav-theme-btn {
+    padding: 6px 9px;
+    font-size: 0.75rem;
+    margin-left: 4px;
+    flex-shrink: 0;
+  }
+
+}
