@@ -1694,3 +1694,29 @@ body.theme-light .project-block .project-meta {
 body.theme-light .project-block p {
   color: #374151 !important;
 }
+/* ===============================
+   PROJECT BLOCK – FINAL LIGHT MODE FIX
+   (ABOUT KARTI İLƏ 1:1)
+================================ */
+
+body:not(.theme-dark) article.project-block {
+  background: rgba(226, 118, 172, 0.25) !important;
+  border: 3px solid rgba(236, 72, 153, 0.45) !important;
+  border-radius: 32px !important;
+
+  box-shadow:
+    0 25px 70px rgba(236, 72, 153, 0.25) !important;
+}
+
+/* TEXT COLORS */
+body:not(.theme-dark) article.project-block h2 {
+  color: #e7549b !important;
+}
+
+body:not(.theme-dark) article.project-block .project-meta {
+  color: #c94a8a !important;
+}
+
+body:not(.theme-dark) article.project-block p {
+  color: #374151 !important;
+}
