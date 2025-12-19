@@ -1840,9 +1840,7 @@ body.theme-dark .home-fab:hover {
   animation: project-float 6s ease-in-out infinite;
 }
 
-.project-block:hover {
-  animation-play-state: paused; /* hover edəndə float dayanır */
-}
+
 @media (max-width: 768px) {
   .nav-item.active {
     background: linear-gradient(
@@ -1985,4 +1983,43 @@ body.theme-dark .home-fab:hover {
     padding: 6px 9px;
     font-size: 0.75rem;
   }
+}
+/* ===============================
+   PROJECT FLOAT — SAFE VERSION
+================================ */
+
+.project-block {
+  --float-y: 0px;
+  transform: translateY(var(--float-y));
+}
+
+/* FLOAT ANIMATION */
+.project-block.floating-card {
+  animation: project-float-safe 6s ease-in-out infinite;
+}
+
+@keyframes project-float-safe {
+  0%   { --float-y: 0px; }
+  50%  { --float-y: -14px; }
+  100% { --float-y: 0px; }
+}
+/* ===============================
+   PROJECT HOVER — LIGHT MODE
+================================ */
+
+body:not(.theme-dark) .project-block:hover {
+  transform: translateY(calc(var(--float-y) - 10px)) scale(1.02);
+
+  box-shadow:
+    0 0 35px rgba(236, 72, 153, 0.45),
+    0 0 70px rgba(236, 72, 153, 0.3),
+    0 30px 80px rgba(236, 72, 153, 0.35);
+}
+body.theme-dark .project-block:hover {
+  transform: translateY(calc(var(--float-y) - 10px)) scale(1.02);
+
+  box-shadow:
+    0 0 40px rgba(255, 111, 165, 0.6),
+    0 0 80px rgba(255, 111, 165, 0.45),
+    0 30px 70px rgba(0, 0, 0, 0.7);
 }
