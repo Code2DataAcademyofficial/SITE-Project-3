@@ -1431,305 +1431,145 @@ body:not(.theme-dark) .about-card {
   }
 }
 
-.projects-section {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 80px 20px;
-  text-align: center;
-}
+/* =====================================================
+   PROJECTS SECTION — FINAL CLEAN VERSION
+   Compatible with About & Contact styles
+===================================================== */
 
-.projects-title {
-  font-size: 2.8rem;
-  margin-bottom: 10px;
-}
-
-.projects-subtitle {
-  color: var(--dark-subtext);
-  margin-bottom: 60px;
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 35px;
-}
-
-.project-card {
-  background: var(--dark-card-bg);
-  padding: 35px;
-  border-radius: 22px;
-  box-shadow: var(--dark-card-shadow);
-  text-align: left;
-  transition: all 0.35s ease;
-}
-
-.project-name {
-  font-size: 1.4rem;
-  margin-bottom: 6px;
-  color: var(--pink-accent);
-}
-
-.project-meta {
-  font-size: 0.9rem;
-  color: var(--dark-subtext);
-  margin-bottom: 14px;
-}
-
-.project-desc {
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.project-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.project-tags span {
-  font-size: 0.75rem;
-  padding: 6px 12px;
-  border-radius: 20px;
-  background: rgba(236, 95, 149, 0.15);
-  color: var(--pink-accent);
-}
-.hover-lift:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow:
-    0 30px 70px rgba(0, 0, 0, 0.7),
-    0 0 40px rgba(236, 95, 149, 0.35);
-}
-/* =========================
-   PROJECTS – CLEAN VERSION
-========================= */
-
+/* PAGE WRAPPER */
 .projects-page {
   max-width: 900px;
-  margin: 80px auto;
+  margin: 120px auto;
   padding: 0 20px;
 }
 
+/* HEADER */
 .projects-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 70px;
 }
 
 .projects-header h1 {
-  font-size: 42px;
+  font-size: 2.6rem;
+  color: #e7549b;
   margin-bottom: 10px;
 }
 
 .projects-header p {
-  opacity: 0.85;
-  font-size: 16px;
+  font-size: 1rem;
+  color: #c94a8a;
+  opacity: 0.9;
 }
 
-/* PROJECT BLOCK */
+/* =====================================================
+   PROJECT CARD (BASE)
+===================================================== */
 
 .project-block {
-  padding: 40px;
-  margin-bottom: 50px;
-  border-radius: 28px;
-  background: var(--dark-card-bg);
-  box-shadow: var(--dark-card-shadow);
-  border: 1px solid rgba(255,255,255,0.12);
-  transition: transform 0.3s ease;
+  position: relative;
+  margin-bottom: 55px;
+  padding: 48px;
+
+  border-radius: 32px;
+  backdrop-filter: blur(14px);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
 }
 
-.project-block:hover {
-  transform: translateY(-6px);
+/* FLOATING ANIMATION (ABOUT-LIKE) */
+.project-block.floating-card {
+  animation: float-card 6s ease-in-out infinite;
 }
+
+@keyframes float-card {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-14px); }
+  100% { transform: translateY(0); }
+}
+
+/* =====================================================
+   TEXT
+===================================================== */
 
 .project-block h2 {
-  font-size: 30px;
-  margin-bottom: 8px;
+  font-size: 1.8rem;
+  margin-bottom: 6px;
 }
 
 .project-meta {
   display: block;
-  font-size: 14px;
-  opacity: 0.7;
+  font-size: 0.9rem;
   margin-bottom: 18px;
 }
 
 .project-block p {
+  font-size: 1.05rem;
   line-height: 1.7;
-  font-size: 16px;
+  margin-bottom: 22px;
 }
 
-/* ACTION BUTTONS */
+/* =====================================================
+   ACTION BUTTONS
+===================================================== */
 
 .project-actions {
-  margin-top: 25px;
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
 }
 
-.btn {
-  padding: 12px 22px;
+/* BUTTON BASE */
+.project-actions .btn {
+  padding: 12px 26px;
   border-radius: 999px;
+  font-weight: 600;
   text-decoration: none;
-  font-size: 15px;
-  color: var(--dark-text);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.btn.primary {
-  background: rgba(0,180,255,0.18);
-  border: 1px solid rgba(0,180,255,0.55);
-}
-
-.btn.secondary {
-  background: rgba(236,95,149,0.18);
-  border: 1px solid rgba(236,95,149,0.55);
-}
-
-.btn:hover {
-  transform: translateY(-4px);
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,0.2),
-    0 18px 45px rgba(0,0,0,0.4);
-}
-
-/* MOBILE */
-
-@media (max-width: 700px) {
-  .projects-header h1 {
-    font-size: 34px;
-  }
-
-  .project-block {
-    padding: 30px 24px;
-  }
-
-  .project-block h2 {
-    font-size: 24px;
-  }
-}
-/* =========================
-   LINKEDIN BUTTON (PROJECTS)
-========================= */
-
-
-
-.btn.linkedin:hover {
-  transform: translateY(-4px);
-  box-shadow:
-    0 0 0 1px rgba(10, 102, 194, 0.35),
-    0 18px 45px rgba(10, 102, 194, 0.35);
-}
-/* =========================
-   PROJECT CARDS – LIGHT MODE FIX
-========================= */
-
-/* Light mode üçün */
-
-/* =========================
-   LINKEDIN BUTTON – PINK THEME
-========================= */
-
-.btn.linkedin {
-  background: rgba(236, 64, 122, 0.18);
-  border: 1.8px solid rgba(236, 64, 122, 0.65);
-  color: var(--dark-text);
-}
-
-.btn.linkedin:hover {
-  transform: translateY(-4px);
-  box-shadow:
-    0 0 0 1px rgba(236, 64, 122, 0.35),
-    0 18px 45px rgba(236, 64, 122, 0.45);
-}
-
-/* ======================================
-   PROJECT CARDS – THEME-AWARE FINAL FIX
-====================================== */
-
-/* LIGHT MODE */
-body.theme-light .project-block {
-  background: rgba(226, 118, 172, 0.25) !important;
-  border: 3px solid rgba(236, 95, 149, 0.45);
-  box-shadow: 0 20px 60px rgba(236, 72, 153, 0.3);
-}
-
-/* DARK MODE */
-body.theme-dark .project-block {
-  background: var(--dark-card-bg) !important;
-  border: 2.5px solid var(--dark-border-pink);
-  box-shadow: var(--dark-card-shadow) !important;
-}
-
-/* HOVER – FLOAT + GLOW (HƏR İKİ MODE) */
-body.theme-light .project-block:hover,
-body.theme-dark .project-block:hover {
-  transform: translateY(-14px) scale(1.02);
-  box-shadow:
-    0 0 40px rgba(236, 72, 153, 0.55),
-    0 0 80px rgba(236, 72, 153, 0.35),
-    0 30px 80px rgba(0, 0, 0, 0.45);
-}
-/* ======================================
-   LINKEDIN BUTTON – UNIFIED PINK
-====================================== */
-
-.project-actions .btn.linkedin {
-  background: rgba(236, 64, 122, 0.22) !important;
-  border: 2px solid rgba(236, 64, 122, 0.7) !important;
-  color: #fff !important;
-}
-
-.project-actions .btn.linkedin:hover {
-  transform: translateY(-6px);
-  box-shadow:
-    0 0 0 1px rgba(236, 64, 122, 0.4),
-    0 22px 55px rgba(236, 64, 122, 0.65);
-}
-/* =========================================
-   PROJECTS – LIGHT MODE = ABOUT STYLE
-========================================= */
+/* =====================================================
+   LIGHT MODE — ABOUT STYLE
+===================================================== */
 
 body.theme-light .project-block {
-  background: rgba(255, 255, 255, 0.85) !important;
-  border-radius: 32px;
-  border: 3px solid rgba(236, 72, 153, 0.45) !important;
+  background: rgba(255, 255, 255, 0.88);
+  border: 3px solid rgba(236, 72, 153, 0.45);
 
   box-shadow:
     0 25px 70px rgba(236, 72, 153, 0.25);
-
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease;
 }
 
-/* TEXT COLORS — ABOUT İLƏ EYNİ */
 body.theme-light .project-block h2 {
-  color: #e7549b !important;
+  color: #e7549b;
 }
 
-body.theme-light .project-block .project-meta {
-  color: #c94a8a !important;
+body.theme-light .project-meta {
+  color: #c94a8a;
 }
 
 body.theme-light .project-block p {
-  color: #374151 !important;
+  color: #374151;
 }
 
-/* HOVER — FLOAT + GLOW (ABOUT KİMİ) */
+/* LIGHT MODE HOVER */
 body.theme-light .project-block:hover {
   transform: translateY(-18px) scale(1.02);
-
   box-shadow:
     0 0 40px rgba(236, 72, 153, 0.55),
     0 0 80px rgba(236, 72, 153, 0.35),
     0 35px 100px rgba(236, 72, 153, 0.45);
 }
-/* PROJECT BUTTONS – LIGHT MODE PINK */
 
+/* LIGHT MODE BUTTONS */
 body.theme-light .project-actions .btn {
-  background: rgba(236, 72, 153, 0.18) !important;
-  border: 2px solid rgba(236, 72, 153, 0.6) !important;
-  color: #7c2d4e !important;
+  background: rgba(236, 72, 153, 0.18);
+  border: 2px solid rgba(236, 72, 153, 0.6);
+  color: #7c2d4e;
 }
 
 body.theme-light .project-actions .btn:hover {
@@ -1739,3 +1579,88 @@ body.theme-light .project-actions .btn:hover {
     0 20px 55px rgba(236, 72, 153, 0.6);
 }
 
+/* =====================================================
+   DARK MODE — CONTACT STYLE
+===================================================== */
+
+body.theme-dark .project-block {
+  background: var(--dark-card-bg);
+  border: 2.5px solid var(--dark-border-pink);
+
+  box-shadow: var(--dark-card-shadow);
+}
+
+body.theme-dark .project-block h2 {
+  color: #ff6fa5;
+}
+
+body.theme-dark .project-meta {
+  color: #d6c2cc;
+}
+
+body.theme-dark .project-block p {
+  color: #f2e9ee;
+}
+
+/* DARK MODE HOVER */
+body.theme-dark .project-block:hover {
+  transform: translateY(-16px) scale(1.02);
+  box-shadow:
+    0 0 40px rgba(255, 111, 165, 0.6),
+    0 0 80px rgba(255, 111, 165, 0.35),
+    0 30px 70px rgba(0, 0, 0, 0.7);
+}
+
+/* DARK MODE BUTTONS */
+body.theme-dark .project-actions .btn {
+  background: rgba(255, 111, 165, 0.18);
+  border: 2px solid rgba(255, 111, 165, 0.55);
+  color: #f2e9ee;
+}
+
+body.theme-dark .project-actions .btn:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 0 1px rgba(255, 111, 165, 0.4),
+    0 22px 55px rgba(0, 0, 0, 0.7);
+}
+
+/* =====================================================
+   LINKEDIN BUTTON — PINK (ALL MODES)
+===================================================== */
+
+.project-actions .btn.linkedin {
+  background: rgba(236, 64, 122, 0.25);
+  border: 2px solid rgba(236, 64, 122, 0.7);
+  color: #fff;
+}
+
+.project-actions .btn.linkedin:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 0 1px rgba(236, 64, 122, 0.45),
+    0 22px 60px rgba(236, 64, 122, 0.7);
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .projects-page {
+    margin: 80px auto;
+  }
+
+  .project-block {
+    padding: 30px 24px;
+  }
+
+  .project-block h2 {
+    font-size: 1.4rem;
+  }
+
+  .projects-header h1 {
+    font-size: 2rem;
+  }
+}
