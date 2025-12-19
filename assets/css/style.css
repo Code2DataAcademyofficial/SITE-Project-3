@@ -1720,3 +1720,11 @@ body:not(.theme-dark) article.project-block .project-meta {
 body:not(.theme-dark) article.project-block p {
   color: #374151 !important;
 }
+/* CONTACT subtitle – Projects subtitle ilə EYNİ PƏMBƏ */
+.contact-subtitle {
+  color: #e7549b !important;
+}
+.contact-subtitle {
+  color: #e7549b !important;
+  opacity: 0.9;
+}
