@@ -1685,4 +1685,57 @@ body.theme-dark .project-block:hover {
     0 0 0 1px rgba(236, 64, 122, 0.4),
     0 22px 55px rgba(236, 64, 122, 0.65);
 }
+/* =========================================
+   PROJECTS – LIGHT MODE = ABOUT STYLE
+========================================= */
+
+body.theme-light .project-block {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-radius: 32px;
+  border: 3px solid rgba(236, 72, 153, 0.45) !important;
+
+  box-shadow:
+    0 25px 70px rgba(236, 72, 153, 0.25);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* TEXT COLORS — ABOUT İLƏ EYNİ */
+body.theme-light .project-block h2 {
+  color: #e7549b !important;
+}
+
+body.theme-light .project-block .project-meta {
+  color: #c94a8a !important;
+}
+
+body.theme-light .project-block p {
+  color: #374151 !important;
+}
+
+/* HOVER — FLOAT + GLOW (ABOUT KİMİ) */
+body.theme-light .project-block:hover {
+  transform: translateY(-18px) scale(1.02);
+
+  box-shadow:
+    0 0 40px rgba(236, 72, 153, 0.55),
+    0 0 80px rgba(236, 72, 153, 0.35),
+    0 35px 100px rgba(236, 72, 153, 0.45);
+}
+/* PROJECT BUTTONS – LIGHT MODE PINK */
+
+body.theme-light .project-actions .btn {
+  background: rgba(236, 72, 153, 0.18) !important;
+  border: 2px solid rgba(236, 72, 153, 0.6) !important;
+  color: #7c2d4e !important;
+}
+
+body.theme-light .project-actions .btn:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 0 1px rgba(236, 72, 153, 0.4),
+    0 20px 55px rgba(236, 72, 153, 0.6);
+}
 
