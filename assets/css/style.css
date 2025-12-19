@@ -2023,3 +2023,16 @@ body.theme-dark .project-block:hover {
     0 0 80px rgba(255, 111, 165, 0.45),
     0 30px 70px rgba(0, 0, 0, 0.7);
 }
+/* ===============================
+   HIDE THEME TOGGLE ON MOBILE
+================================ */
+@media (max-width: 768px) {
+  #theme-toggle {
+    display: none !important;
+  }
+}
+@media (max-width: 768px) {
+  .nav-container {
+    justify-content: flex-start;
+  }
+}
