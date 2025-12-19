@@ -1733,3 +1733,7 @@ body.theme-light .contact-subtitle,
 body:not(.theme-dark) .contact-subtitle {
   color: #e7549b !important;
 }
+/* ABSOLUTE FORCE – CONTACT SUBTITLE */
+body .contact-hub p.contact-subtitle {
+  color: #e7549b !important;
+}
