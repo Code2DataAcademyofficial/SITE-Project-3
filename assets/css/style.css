@@ -1607,5 +1607,21 @@ body:not(.theme-dark) .about-card {
     font-size: 24px;
   }
 }
+/* =========================
+   LINKEDIN BUTTON (PROJECTS)
+========================= */
+
+.btn.linkedin {
+  background: rgba(10, 102, 194, 0.18);   /* LinkedIn blue */
+  border: 1px solid rgba(10, 102, 194, 0.6);
+  color: var(--dark-text);
+}
+
+.btn.linkedin:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 0 1px rgba(10, 102, 194, 0.35),
+    0 18px 45px rgba(10, 102, 194, 0.35);
+}
 
 
