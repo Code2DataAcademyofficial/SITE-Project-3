@@ -1728,3 +1728,8 @@ body:not(.theme-dark) article.project-block p {
   color: #e7549b !important;
   opacity: 0.9;
 }
+/* FORCE CONTACT SUBTITLE COLOR */
+body.theme-light .contact-subtitle,
+body:not(.theme-dark) .contact-subtitle {
+  color: #e7549b !important;
+}
