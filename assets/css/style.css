@@ -1815,13 +1815,23 @@ body.theme-dark .home-fab:hover {
 ================================ */
 
 @media (max-width: 768px) {
-  .home-fab {
-    top: 92px;
-    left: 12px;
-    padding: 10px 16px;
-    font-size: 0.8rem;
+  .nav-item {
+    font-size: 0.78rem;
+    padding: 8px 14px;        /* baloncuk qalır */
+    border-radius: 999px;
+
+    /* ⛔ STİLİ SİLMİRİK */
+    background: inherit;
+    box-shadow: inherit;
+    color: inherit;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
   }
 }
+
 /* ===============================
    PROJECT FLOATING (ABOUT STYLE)
 ================================ */
@@ -1843,4 +1853,18 @@ body.theme-dark .home-fab:hover {
 }
 .project-block:hover {
   animation-play-state: paused; /* hover edəndə float dayanır */
+}
+@media (max-width: 768px) {
+  .nav-item.active {
+    background: linear-gradient(
+      135deg,
+      var(--pink-light),
+      var(--pink-main)
+    );
+    color: #fff;
+
+    box-shadow:
+      0 14px 36px rgba(236, 72, 153, 0.75),
+      0 0 50px rgba(236, 72, 153, 0.55);
+  }
 }
