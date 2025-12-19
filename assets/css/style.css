@@ -2036,3 +2036,13 @@ body.theme-dark .project-block:hover {
     justify-content: flex-start;
   }
 }
+/* ===============================
+   PROJECT CARD HOVER GLOW — LIGHT MODE (FINAL)
+================================ */
+
+body:not(.theme-dark) .project-block:hover {
+  box-shadow:
+    0 0 35px rgba(236, 72, 153, 0.55),
+    0 0 70px rgba(236, 72, 153, 0.35),
+    0 30px 80px rgba(236, 72, 153, 0.45) !important;
+}
