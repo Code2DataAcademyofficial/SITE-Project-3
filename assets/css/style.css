@@ -1874,175 +1874,110 @@ body.theme-dark .home-fab:hover {
   }
 }
 
-/* ===============================
-   PROJECT FLOAT — ABOUT STYLE (FINAL)
-================================ */
+/* =====================================================
+   PROJECTS SECTION — FINAL CLEAN (NO BUGS)
+===================================================== */
 
-/* FLOAT */
-.project-block.floating-card {
-  animation: float-card 6s ease-in-out infinite;
+/* ===== PROJECT CARD BASE ===== */
+.project-block {
+  position: relative;
+  margin-bottom: 56px;
+  padding: 48px;
+
+  border-radius: 32px;
+  backdrop-filter: blur(14px);
+
+  transition:
+    box-shadow 0.4s ease;
 }
 
-/* HOVER — FLOAT DAYANMIR */
-.project-block:hover {
-  transform: translateY(-16px) scale(1.02);
+/* ===== FLOATING (ABOUT STYLE) ===== */
+.project-block.floating-card {
+  animation: project-float 6s ease-in-out infinite;
+}
+
+@keyframes project-float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-14px); }
+  100% { transform: translateY(0); }
+}
+
+/* =====================================================
+   LIGHT MODE — PINK ABOUT STYLE
+===================================================== */
+
+body:not(.theme-dark) .project-block {
+  background: rgba(226, 118, 172, 0.25);
+  border: 3px solid rgba(236, 72, 153, 0.45);
+
+  box-shadow:
+    0 25px 70px rgba(236, 72, 153, 0.25);
+}
+
+/* TEXT */
+body:not(.theme-dark) .project-block h2 {
+  color: #e7549b;
+}
+
+body:not(.theme-dark) .project-meta {
+  color: #c94a8a;
+}
+
+body:not(.theme-dark) .project-block p {
+  color: #374151;
+}
+
+/* 🔥 HOVER — GLOW ONLY (FLOAT NEVER STOPS) */
+body:not(.theme-dark) .project-block:hover {
   box-shadow:
     0 0 35px rgba(236, 72, 153, 0.55),
     0 0 70px rgba(236, 72, 153, 0.35),
     0 35px 100px rgba(236, 72, 153, 0.45);
 }
 
-/* FLOAT KEYFRAMES — ABOUT İLƏ EYNİ */
-@keyframes float-card {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-14px); }
-  100% { transform: translateY(0); }
-}
-/* ===============================
-   MOBILE NAVBAR OVERFLOW FIX
-================================ */
+/* =====================================================
+   DARK MODE — SAME BEHAVIOR
+===================================================== */
 
-@media (max-width: 768px) {
-
-  .nav-container {
-    padding: 8px 10px;
-    gap: 6px;
-  }
-
-  /* LOGO biraz kiçilsin */
-  .nav-logo .flower.big {
-    font-size: 26px;
-  }
-
-  .nav-logo .flower.small {
-    font-size: 18px;
-    transform: translateY(3px);
-  }
-
-  /* NAV LINKS daha kompakt */
-  .nav-links {
-    gap: 4px;
-    flex-shrink: 1;
-  }
-
-  .nav-item {
-    padding: 6px 10px;     /* 🔥 əsas fix */
-    font-size: 0.72rem;    /* 🔥 əsas fix */
-    min-width: unset;
-  }
-
-  /* THEME TOGGLE kiçilsin */
-  .nav-theme-btn {
-    padding: 6px 9px;
-    font-size: 0.75rem;
-    margin-left: 4px;
-    flex-shrink: 0;
-  }
-
-}
-/* ===============================
-   NAV LINKS STRUCTURE FIX
-================================ */
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 0;
-  margin: 0;
-}
-
-.nav-links li {
-  display: flex;
-}
-
-/* ===============================
-   MOBILE SAFETY
-================================ */
-
-@media (max-width: 768px) {
-
-  .nav-container {
-    padding: 8px 10px;
-    gap: 6px;
-  }
-
-  .nav-links {
-    gap: 4px;
-    flex-wrap: nowrap;
-  }
-
-  .nav-item {
-    padding: 6px 10px;
-    font-size: 0.72rem;
-    white-space: nowrap;
-  }
-
-  .nav-theme-btn {
-    padding: 6px 9px;
-    font-size: 0.75rem;
-  }
-}
-/* ===============================
-   PROJECT FLOAT — SAFE VERSION
-================================ */
-
-.project-block {
-  --float-y: 0px;
-  transform: translateY(var(--float-y));
-}
-
-/* FLOAT ANIMATION */
-.project-block.floating-card {
-  animation: project-float-safe 6s ease-in-out infinite;
-}
-
-@keyframes project-float-safe {
-  0%   { --float-y: 0px; }
-  50%  { --float-y: -14px; }
-  100% { --float-y: 0px; }
-}
-/* ===============================
-   PROJECT HOVER — LIGHT MODE
-================================ */
-
-body:not(.theme-dark) .project-block:hover {
-  transform: translateY(calc(var(--float-y) - 10px)) scale(1.02);
+body.theme-dark .project-block {
+  background: linear-gradient(145deg, #4a2438, #2a1220);
+  border: 2.5px solid #ff6fa5;
 
   box-shadow:
-    0 0 35px rgba(236, 72, 153, 0.45),
-    0 0 70px rgba(236, 72, 153, 0.3),
-    0 30px 80px rgba(236, 72, 153, 0.35);
+    0 25px 60px rgba(0, 0, 0, 0.65),
+    0 0 35px rgba(236, 95, 149, 0.25);
 }
-body.theme-dark .project-block:hover {
-  transform: translateY(calc(var(--float-y) - 10px)) scale(1.02);
 
+body.theme-dark .project-block h2 {
+  color: #ff6fa5;
+}
+
+body.theme-dark .project-meta {
+  color: #d6c2cc;
+}
+
+body.theme-dark .project-block p {
+  color: #f2e9ee;
+}
+
+/* DARK MODE HOVER — GLOW ONLY */
+body.theme-dark .project-block:hover {
   box-shadow:
     0 0 40px rgba(255, 111, 165, 0.6),
-    0 0 80px rgba(255, 111, 165, 0.45),
+    0 0 80px rgba(255, 111, 165, 0.35),
     0 30px 70px rgba(0, 0, 0, 0.7);
 }
-/* ===============================
-   HIDE THEME TOGGLE ON MOBILE
-================================ */
-@media (max-width: 768px) {
-  #theme-toggle {
-    display: none !important;
-  }
-}
-@media (max-width: 768px) {
-  .nav-container {
-    justify-content: flex-start;
-  }
-}
-/* ===============================
-   PROJECT CARD HOVER GLOW — LIGHT MODE (FINAL)
-================================ */
 
-body:not(.theme-dark) .project-block:hover {
-  box-shadow:
-    0 0 35px rgba(236, 72, 153, 0.55),
-    0 0 70px rgba(236, 72, 153, 0.35),
-    0 30px 80px rgba(236, 72, 153, 0.45) !important;
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+  .project-block {
+    padding: 30px 24px;
+  }
+
+  .project-block h2 {
+    font-size: 1.4rem;
+  }
 }
