@@ -2005,3 +2005,38 @@ body:not(.theme-dark) .project-block:hover {
     0 0 60px rgba(236, 72, 153, 0.4),
     0 35px 90px rgba(236, 72, 153, 0.45) !important;
 }
+/* 📱 CONTACT – MOBILE FIX */
+@media (max-width: 768px) {
+
+  .contact-option {
+    animation: none !important;   /* float söndür */
+    transform: none !important;
+  }
+
+  .contact-option:hover {
+    transform: none !important;
+    box-shadow:
+      0 18px 40px rgba(236, 72, 153, 0.35) !important;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .contact-options {
+    grid-template-columns: 1fr;  /* 1 sütun */
+    gap: 26px;
+    padding: 0 10px;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .nav-links {
+    flex-wrap: wrap;        /* 🔥 ƏSAS */
+    justify-content: center;
+  }
+
+}
+main {
+  padding-top: 90px;
+}
