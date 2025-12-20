@@ -2225,3 +2225,54 @@ html, body,
 *::after {
   font-family: "Times New Roman", Times, serif !important;
 }
+/* ===============================
+   PROJECT — IMAGE ON RIGHT
+================================ */
+
+.project-with-image {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr; /* sol text, sağ şəkil */
+  gap: 32px;
+  align-items: center;
+
+  min-height: 320px; /* kart bir az uzun olsun */
+}
+
+/* TEXT SIDE */
+.project-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* IMAGE BOX */
+.project-image {
+  padding: 12px;
+  border-radius: 22px;
+
+  border: 3px solid rgba(236, 72, 153, 0.6); /* 💗 pembe çərçivə */
+  background: rgba(255, 182, 193, 0.15);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* IMAGE */
+.project-image img {
+  width: 100%;
+  max-width: 260px;
+  border-radius: 16px;
+  object-fit: cover;
+
+  box-shadow:
+    0 12px 30px rgba(236, 72, 153, 0.35);
+}
+@media (max-width: 768px) {
+  .project-with-image {
+    grid-template-columns: 1fr;
+  }
+
+  .project-image {
+    margin-top: 18px;
+  }
+}
