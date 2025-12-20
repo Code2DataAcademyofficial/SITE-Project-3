@@ -2134,7 +2134,7 @@ main {
 
   /* Navbar-dan sonrakı ümumi boşluq */
   main {
-    padding-top: 72px;   /* əvvəl çox idi */
+    padding-top: 0px;   /* əvvəl çox idi */
   }
 
   /* Səhifə section-ları yuxarı qalxsın */
@@ -2151,4 +2151,25 @@ main {
     margin-top: 0;
   }
 
+}
+/* ===============================
+   FIX: TOP SPACE (MOBILE + DESKTOP)
+================================ */
+
+/* DESKTOP */
+@media (min-width: 769px) {
+  .about,
+  .projects-page,
+  .contact-hub {
+    padding-top: 70px;   /* əvvəl çox idi */
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .about,
+  .projects-page,
+  .contact-hub {
+    padding-top: 50px;
+  }
 }
