@@ -1994,3 +1994,36 @@ body.theme-dark .project-block:hover {
     pointer-events: none !important;
   }
 }
+/* ===============================
+   PROJECT CARDS – REAL LIGHT GLOW
+   (LIGHT MODE ONLY – FINAL FIX)
+================================ */
+
+body:not(.theme-dark) .project-block {
+  position: relative;
+  isolation: isolate; /* glow layer üçün */
+}
+
+/* GLOW LAYER */
+body:not(.theme-dark) .project-block::after {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  border-radius: 40px;
+  z-index: -1;
+
+  background: radial-gradient(
+    circle at center,
+    rgba(236, 72, 153, 0.45),
+    transparent 70%
+  );
+
+  opacity: 0;
+  filter: blur(25px);
+  transition: opacity 0.4s ease;
+}
+
+/* HOVER → ISIQ SAÇSIN */
+body:not(.theme-dark) .project-block:hover::after {
+  opacity: 1;
+}
