@@ -2218,3 +2218,9 @@ html, body {
   font-weight: 600;
   letter-spacing: 0.4px;
 }
+/* ===== FORCE POPPINS — DESKTOP FIX ===== */
+*,
+*::before,
+*::after {
+  font-family: "Poppins", sans-serif !important;
+}
