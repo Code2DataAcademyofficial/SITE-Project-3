@@ -2173,3 +2173,20 @@ main {
     padding-top: 50px;
   }
 }
+/* ===============================
+   FIX: PROJECTS TOP SPACE
+================================ */
+
+/* DESKTOP */
+@media (min-width: 769px) {
+  .projects-page {
+    margin-top: 70px;   /* əvvəl 120 idi */
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .projects-page {
+    margin-top: 50px;
+  }
+}
