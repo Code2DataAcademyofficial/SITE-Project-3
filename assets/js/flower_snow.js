@@ -1,93 +1,124 @@
 (function () {
-  // Continuous flower rain that visually persists across page navigations
-  // within the same tab. Uses sessionStorage to remember a session start time
-  // and seeds mid-fall flowers on each page load so the rain appears
-  // uninterrupted.
+  "use strict";
 
-  const SPAWN_DELAY = 280; // ms between new spawns
-  const MIN_DUR = 6; // seconds (min fall duration)
-  const MAX_DUR = 10; // seconds (max fall duration)
-  const MAX_INITIAL = 30; // max seeded flowers on page load
+  /* ==========================
+     CONFIG
+  ========================== */
+  const SPAWN_INTERVAL = 260;   // ms — nə qədər tez-tez düşsün
+  const MIN_DURATION = 6;       // s — minimum düşmə vaxtı
+  const MAX_DURATION = 10;      // s — maksimum düşmə vaxtı
+  const MAX_SEEDED = 28;        // page load zamanı maksimum seed
 
-  function prefersReduce() {
-    return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* ==========================
+     ACCESSIBILITY
+  ========================== */
+  function prefersReducedMotion() {
+    return (
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    );
   }
 
-  function createOverlayIfMissing() {
-    let overlay = document.getElementById('flower-overlay');
+  /* ==========================
+     OVERLAY
+  ========================== */
+  function getOverlay() {
+    let overlay = document.getElementById("flower-overlay");
     if (!overlay) {
-      overlay = document.createElement('div');
-      overlay.id = 'flower-overlay';
+      overlay = document.createElement("div");
+      overlay.id = "flower-overlay";
       document.body.appendChild(overlay);
     }
     return overlay;
   }
 
-  function spawnFlower(overlay, ageSeconds = 0, forcedDuration) {
-    const flower = document.createElement('div');
-    flower.className = 'falling-flower';
-    flower.textContent = '🌸';
+  /* ==========================
+     SPAWN ONE FLOWER
+  ========================== */
+  function spawnFlower(overlay, ageSeconds = 0) {
+    const flower = document.createElement("div");
+    flower.className = "falling-flower";
+    flower.textContent = "🌸";
 
-    flower.style.left = (Math.random() * 100) + '%';
-    flower.style.fontSize = (14 + Math.random() * 20) + 'px';
+    // position & size
+    flower.style.left = Math.random() * 100 + "vw";
+    flower.style.fontSize = 14 + Math.random() * 20 + "px";
 
-    const duration = forcedDuration || (MIN_DUR + Math.random() * (MAX_DUR - MIN_DUR));
-    flower.style.animationDuration = duration + 's';
+    // duration
+    const duration =
+      MIN_DURATION + Math.random() * (MAX_DURATION - MIN_DURATION);
+    flower.style.animationDuration = duration + "s";
 
-    // negative delay makes the flower appear mid-fall (continuity)
-    const delay = ageSeconds ? -Math.abs(ageSeconds) : 0;
-    flower.style.animationDelay = delay + 's';
+    // continuity: negative delay → mid-fall
+    flower.style.animationDelay = ageSeconds
+      ? -Math.min(ageSeconds, duration) + "s"
+      : "0s";
 
     overlay.appendChild(flower);
 
-    // Remove after remaining time in its animation
-    const ageMod = ((ageSeconds % duration) + duration) % duration; // [0, duration)
-    const remaining = duration - ageMod;
-    setTimeout(() => { try { flower.remove(); } catch (e) {} }, (remaining * 1000) + 1200);
+    // cleanup
+    const remaining = Math.max(duration - ageSeconds, 0);
+    setTimeout(() => {
+      try {
+        flower.remove();
+      } catch (e) {}
+    }, remaining * 1000 + 1200);
   }
 
-  function startFlowerRain() {
-    if (window.__flowerRainStarted) return;
-    window.__flowerRainStarted = true;
+  /* ==========================
+     START RAIN
+  ========================== */
+  function startRain() {
+    if (window.__flowerRainRunning) return;
+    window.__flowerRainRunning = true;
 
-    if (prefersReduce()) return;
+    if (prefersReducedMotion()) return;
 
-    const overlay = createOverlayIfMissing();
+    const overlay = getOverlay();
 
-    // Set or read session start time so each load can seed based on elapsed time
+    /* -------- SESSION CONTINUITY -------- */
     const now = Date.now();
-    let start = parseInt(sessionStorage.getItem('flowerRainStart'), 10);
+    let start = Number(sessionStorage.getItem("flowerRainStart"));
+
     if (!start || isNaN(start)) {
       start = now;
-      sessionStorage.setItem('flowerRainStart', String(start));
+      sessionStorage.setItem("flowerRainStart", String(start));
     }
 
-    const elapsed = now - start;
-    const estimatedSpawns = Math.floor(elapsed / SPAWN_DELAY);
-    // seed a modest fraction so it doesn't overload the DOM
-    const initialCount = Math.min(Math.max(Math.floor(estimatedSpawns * 0.2), 6), MAX_INITIAL);
+    const elapsedSeconds = (now - start) / 1000;
 
-    for (let i = 0; i < initialCount; i++) {
-      const dur = MIN_DUR + Math.random() * (MAX_DUR - MIN_DUR);
-      const age = Math.random() * dur; // seconds
-      spawnFlower(overlay, age, dur);
+    // seed mid-fall flowers
+    const seedCount = Math.min(
+      Math.max(Math.floor(elapsedSeconds * 0.8), 6),
+      MAX_SEEDED
+    );
+
+    for (let i = 0; i < seedCount; i++) {
+      spawnFlower(overlay, Math.random() * MAX_DURATION);
     }
 
-    let lastSpawn = now;
-    function loop(time) {
-      if (time - lastSpawn > SPAWN_DELAY) {
-        lastSpawn = time;
-        spawnFlower(overlay, 0);
+    /* -------- STABLE SPAWN LOOP -------- */
+    setInterval(() => {
+      spawnFlower(overlay, 0);
+    }, SPAWN_INTERVAL);
+
+    /* -------- TAB VISIBILITY FIX -------- */
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "visible") {
+        // boşluq hissini gizlət
+        for (let i = 0; i < 6; i++) {
+          spawnFlower(overlay, Math.random() * 2);
+        }
       }
-      requestAnimationFrame(loop);
-    }
-
-    requestAnimationFrame(loop);
+    });
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', startFlowerRain);
+  /* ==========================
+     INIT
+  ========================== */
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", startRain);
   } else {
-    startFlowerRain();
+    startRain();
   }
 })();
