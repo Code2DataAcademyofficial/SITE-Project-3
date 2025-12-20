@@ -2185,3 +2185,21 @@ main {
     margin-top: 0px !important;
   }
 }
+/* ===============================
+   FIX ONLY PROJECTS TOP GAP
+   (KEEP OLD CSS)
+================================ */
+
+/* Desktop */
+.projects-page {
+  margin-top: 0 !important;
+  padding-top: 80px !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .projects-page {
+    margin-top: 0 !important;
+    padding-top: 50px !important;
+  }
+}
