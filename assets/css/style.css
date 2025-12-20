@@ -2206,14 +2206,15 @@ main {
   }
 }
 /* ===============================
-   PAGE HEADERS — CUSTOM FONT
-   (About / Projects / Contact)
+   GLOBAL FONT — POPPINS (FINAL)
 ================================ */
 
+html, body {
+  font-family: "Poppins", sans-serif !important;
+}
 .about h1,
 .projects-header h1,
 .contact-title {
-  font-family: "Playfair Display", serif;
   font-weight: 600;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
 }
