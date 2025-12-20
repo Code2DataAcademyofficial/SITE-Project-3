@@ -34,7 +34,7 @@
   box-sizing: border-box;
 }
 
-b/* ================
+/* ================
    PAGE BACKGROUND
 ========================= */
 body {
@@ -2094,7 +2094,7 @@ main {
 
   /* Navbar content-in üstünə minməsin */
   main {
-    padding-top: 64px;
+    padding-top: 0px;
   }
 
   /* Səhifə başlıqları çox aşağı düşməsin */
