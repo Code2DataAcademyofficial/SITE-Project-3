@@ -2205,3 +2205,15 @@ main {
     padding-top: 50px !important;
   }
 }
+/* ===============================
+   PAGE HEADERS — CUSTOM FONT
+   (About / Projects / Contact)
+================================ */
+
+.about h1,
+.projects-header h1,
+.contact-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
