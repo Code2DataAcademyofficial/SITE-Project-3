@@ -2192,9 +2192,11 @@ main {
 
 /* Desktop */
 .projects-page {
-  margin-top: 0 !important;
-  padding-top: 80px !important;
+  max-width: 900px;
+  margin: 0 auto;          /* 🔥 boşluğu öldürür */
+  padding: 80px 20px;      /* About ilə eyni hiss */
 }
+
 
 /* Mobile */
 @media (max-width: 768px) {
