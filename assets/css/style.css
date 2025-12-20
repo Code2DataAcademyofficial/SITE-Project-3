@@ -2077,3 +2077,31 @@ main {
 
 }
 
+/* ===============================
+   MOBILE – TOP SPACE FIX (FINAL)
+================================ */
+@media (max-width: 768px) {
+
+  /* Navbar hündürlüyünü azaldır */
+  .navbar {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  .nav-container {
+    padding: 6px 12px;
+  }
+
+  /* Navbar content-in üstünə minməsin */
+  main {
+    padding-top: 64px;
+  }
+
+  /* Səhifə başlıqları çox aşağı düşməsin */
+  .contact-hub,
+  .about,
+  .projects-page {
+    padding-top: 64px !important;
+  }
+
+}
