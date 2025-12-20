@@ -2039,4 +2039,41 @@ body:not(.theme-dark) .project-block:hover {
 }
 main {
   padding-top: 90px;
+}/* ===============================
+   MOBILE NAVBAR – FIT EVERYTHING
+   (NO ANIMATION REMOVAL)
+================================ */
+
+@media (max-width: 768px) {
+
+  /* Navbar konteyner */
+  .nav-container {
+    flex-wrap: wrap;                 /* 🔥 əsas fix */
+    justify-content: center;
+    gap: 8px;
+  }
+
+  /* Logo – birinci sətir */
+  .nav-logo {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 6px;
+  }
+
+  /* Linklər – ikinci sətir */
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;                 /* 🔥 əsas fix */
+    gap: 8px;
+  }
+
+  /* Düymələr – ölçü adaptasiyası */
+  .nav-item {
+    font-size: 0.78rem;
+    padding: 8px 14px;
+    white-space: nowrap;             /* stil qalır */
+  }
+
 }
+
