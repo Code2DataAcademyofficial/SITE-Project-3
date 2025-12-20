@@ -2105,3 +2105,25 @@ main {
   }
 
 }
+/* ===============================
+   MOBILE – REMOVE TOP GAP (REAL FIX)
+================================ */
+@media (max-width: 768px) {
+
+  /* SECTION özü */
+  section,
+  .contact-hub,
+  .about,
+  .projects-page {
+    margin-top: 0 !important;
+    padding-top: 48px !important;
+    min-height: unset !important;   /* 🔥 ƏSAS FIX */
+  }
+
+  /* İLK BAŞLIQ (Let’s Get in Touch, Projects və s.) */
+  section h1:first-child,
+  .contact-title {
+    margin-top: 0 !important;       /* 🔥 ƏSAS FIX */
+  }
+
+}
