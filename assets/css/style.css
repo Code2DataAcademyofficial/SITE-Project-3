@@ -2178,15 +2178,10 @@ main {
 ================================ */
 
 /* DESKTOP */
-@media (min-width: 769px) {
-  .projects-page {
-    margin-top: 70px;   /* əvvəl 120 idi */
-  }
-}
 
 /* MOBILE */
 @media (max-width: 768px) {
   .projects-page {
-    margin-top: 50px;
+    margin-top: 0px !important;
   }
 }
