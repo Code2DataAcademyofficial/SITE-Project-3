@@ -2127,3 +2127,28 @@ main {
   }
 
 }
+/* ===============================
+   DESKTOP – TOP SPACE FIX
+================================ */
+@media (min-width: 769px) {
+
+  /* Navbar-dan sonrakı ümumi boşluq */
+  main {
+    padding-top: 72px;   /* əvvəl çox idi */
+  }
+
+  /* Səhifə section-ları yuxarı qalxsın */
+  .about,
+  .projects-page,
+  .contact-hub {
+    padding-top: 80px;   /* əvvəl 120–140px idi */
+  }
+
+  /* Section başlıqları çox aşağı düşməsin */
+  .about h1,
+  .projects-header,
+  .contact-title {
+    margin-top: 0;
+  }
+
+}
